@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비즈니스 골프 | 3F 골프피팅 | BizHub Mir</title>
+<meta name="description" content="PT. Golf Fitting Lab이 운영하는 Cikarang 최초의 하이엔드 기술 기반 골프 공간. 스크린골프를 병행 이용하며 비즈니스 네트워킹 무대로도 활용할 수 있습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`비즈니스 골프 | 3F 골프피팅 | BizHub Mir`, en:`Business Golf | 3F Golf Fitting | BizHub Mir` };
+
+T.ko.golfBusiness = {
+  pageEyebrow:`3F 골프피팅 · 비즈니스 골프`, pageTitle:`연습부터 가상 라운딩까지, 접대와 네트워킹의 새로운 무대`, pageDesc:`스크린골프를 병행 이용하며 비즈니스 네트워킹 공간으로도 활용할 수 있습니다.`,
+
+  introEyebrow:`About`, introTitle:`PT. Golf Fitting Lab이 만드는 비즈니스 골프 공간`,
+  introDesc:`BizHub Mir 3F는 Cikarang 최초의 하이엔드, 기술 기반 골프 피팅 공간을 지향하는 PT. Golf Fitting Lab이 운영합니다. 중상위 소득 골퍼, 주재원, 비즈니스 전문가를 위한 접대·네트워킹 무대로 설계되었습니다.`,
+  intro1t:`투어급 피팅 인프라`, intro1d:`정밀 분석 장비와 공인 피팅사를 갖춰 접대 라운드 전 클럽 컨디션까지 점검합니다.`,
+  intro2t:`주재원·비즈니스 전문가 타겟`, intro2d:`자카르타 인근 한국 기업 주재원과 사업가의 접대·네트워킹 수요에 맞춰 설계했습니다.`,
+
+  facilityEyebrow:`Facility`, facilityTitle:`연습 + 가상 라운딩`, facilityDesc:`피팅으로 맞춘 클럽을 바로 스크린골프에서 테스트하고, 접대·네트워킹 라운드로 이어갈 수 있습니다.`,
+  availEyebrow:`Availability`, availTitle:`이번 주 예약 가능 시간대 (예시)`,
+  th1:`요일`, th2:`오전`, th3:`오후`, th4:`저녁`,
+  r1a:`월–금`, r1b:`여유 있음`, r1c:`일부 마감`, r1d:`예약 문의`,
+  r2a:`토–일`, r2b:`예약 문의`, r2c:`예약 문의`, r2d:`마감`,
+  note:`* 실제 예약 가능 시간은 WhatsApp/Google Calendar 연동을 통해 실시간 확인 가능합니다.`,
+  ctaBtn:`예약 문의하기`,
+};
+T.en.golfBusiness = {
+  pageEyebrow:`3F Golf Fitting · Business Golf`, pageTitle:`From practice to a virtual round — a new stage for hosting and networking`, pageDesc:`Use the screen golf setup alongside fitting sessions as a business networking space too.`,
+
+  introEyebrow:`About`, introTitle:`A Business Golf Space by PT. Golf Fitting Lab`,
+  introDesc:`BizHub Mir's 3F is operated by PT. Golf Fitting Lab, aiming to be Cikarang's first high-end, technology-driven golf fitting space — designed as a hosting and networking stage for upper-income golfers, expatriates, and business professionals.`,
+  intro1t:`Tour-Grade Fitting Infrastructure`, intro1d:`Precision analysis equipment and certified fitters let you check your clubs' condition before a hosting round.`,
+  intro2t:`Built for Expats & Business Professionals`, intro2d:`Designed around the hosting and networking needs of Korean corporate staff and business owners near Jakarta.`,
+
+  facilityEyebrow:`Facility`, facilityTitle:`Practice + Virtual Rounds`, facilityDesc:`Test your freshly fitted clubs on the screen golf simulator right away, then carry the round into a hosting or networking session.`,
+  availEyebrow:`Availability`, availTitle:`This Week's Availability (sample)`,
+  th1:`Day`, th2:`Morning`, th3:`Afternoon`, th4:`Evening`,
+  r1a:`Mon–Fri`, r1b:`Open`, r1c:`Partially booked`, r1d:`Ask us`,
+  r2a:`Sat–Sun`, r2b:`Ask us`, r2c:`Ask us`, r2d:`Full`,
+  note:`* Real-time availability can be checked via our WhatsApp/Google Calendar integration.`,
+  ctaBtn:`Ask About a Reservation`,
+};
+
+function renderGolfBusiness(lang){ const t = T[lang].golfBusiness; return `
+${siteHeader('golf-business', lang)}
+${pageHero('golf-business','green', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.introEyebrow)}
+    <h2 class="sec-h2">${t.introTitle}</h2>
+    <p class="sec-desc">${t.introDesc}</p>
+    <div class="grid-2">
+      <div class="stat"><div class="ic">${icon('target',22)}</div><b>${t.intro1t}</b><span>${t.intro1d}</span></div>
+      <div class="stat"><div class="ic">${icon('briefcase',22)}</div><b>${t.intro2t}</b><span>${t.intro2d}</span></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.facilityEyebrow)}
+    <h2 class="sec-h2">${t.facilityTitle}</h2>
+    <p class="sec-desc">${t.facilityDesc}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.availEyebrow)}
+    <h2 class="sec-h2">${t.availTitle}</h2>
+    <div class="table-scroll" style="margin-top:22px;"><table>
+      <thead><tr><th>${t.th1}</th><th>${t.th2}</th><th>${t.th3}</th><th>${t.th4}</th></tr></thead>
+      <tbody>
+        <tr><td>${t.r1a}</td><td>${t.r1b}</td><td>${t.r1c}</td><td>${t.r1d}</td></tr>
+        <tr><td>${t.r2a}</td><td>${t.r2b}</td><td>${t.r2c}</td><td>${t.r2d}</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:12px; color:var(--ink-faint); margin-top:10px;">${t.note}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <a class="btn btn-green" onclick="navigate('contact')">${icon('chat',16)} ${t.ctaBtn}</a>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderGolfBusiness(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>

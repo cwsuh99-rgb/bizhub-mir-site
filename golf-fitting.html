@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>피팅 서비스 | 3F 골프피팅 | BizHub Mir</title>
+<meta name="description" content="Body · Club · Swing Fitting을 정밀 분석 장비와 공인 자격을 갖춘 피터가 진단하는 과학적 피팅. 단순 연습이 아닌, 데이터 기반 진단으로 단기간 실력 향상에 집중합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`피팅 서비스 | 3F 골프피팅 | BizHub Mir`, en:`Fitting Service | 3F Golf Fitting | BizHub Mir` };
+
+T.ko.golfFitting = {
+  pageEyebrow:`3F 골프피팅 · 피팅 서비스`, pageTitle:`바디 · 클럽 · 스윙을 정밀 분석 장비로 진단하는 과학적 피팅`, pageDesc:`단순 연습이 아닌, 데이터 기반 진단으로 단기간 실력 향상에 집중합니다.`,
+
+  pillarsEyebrow:`3 Fitting Pillars`, pillarsTitle:`Body · Club · Swing, 세 가지 피팅 영역`,
+  pillarsDesc:`골프 지도는 신체·장비·스윙 등 여러 요소로 세분화됩니다. BizHub Mir 3F는 그중 검증된 자격을 갖춘 세 가지 피팅 영역에 집중합니다.`,
+  pil1t:`Body Fitting`, pil1sub:`TPI 기반`, pil1d:`신체 밸런스와 가동범위를 진단해 스윙에 맞는 몸의 조건을 만듭니다.`,
+  pil2t:`Club Fitting`, pil2sub:`KGFA(대한골프피팅협회) 기준`, pil2d:`샤프트 · 헤드 · 라이각 등 클럽 스펙을 개인 스윙에 맞춰 조정합니다.`,
+  pil3t:`Swing Fitting`, pil3sub:`Foresight Sports PEAK 프로그램`, pil3d:`정밀 데이터 분석으로 스윙 궤적과 임팩트를 진단하고 개선 방향을 제안합니다.`,
+
+  processEyebrow:`Process`, processTitle:`피팅 프로세스`,
+  s1t:`진단`, s1d:`바디 밸런스와 스윙 궤적을 정밀 분석 장비로 측정합니다.`,
+  s2t:`분석`, s2d:`측정 데이터를 기반으로 클럽 스펙(샤프트·헤드·라이각 등) 적합도를 분석합니다.`,
+  s3t:`솔루션 제안`, s3d:`개인 맞춤 클럽 세팅과 스윙 개선 방향을 제안합니다.`,
+
+  expertEyebrow:`Expert`, expertTitle:`피팅을 이끄는 전문가`,
+  expertName:`Dr. Suh Fitter (서창우)`, expertPh:`Dr. Suh Fitter`,
+  expertBio:`화학공학 박사로 한국·인도네시아 대웅제약에서 20년 넘게 연구·개발·생산에 종사한 뒤, 스윙 메커닉스·클럽 피팅·스포츠 심리학을 연구하며 골프의 세 핵심 요소 — 스윙·바디·클럽 피팅의 공인 전문가가 되었습니다. 골퍼마다 다른 신체·나이·성향을 고려한 데이터 기반 접근으로 가장 효과적인 개선 방향을 제안합니다.`,
+  cert1t:`Body Fitting`, cert1sub:`TPI Level 1 Certified`,
+  cert2t:`Swing Fitting`, cert2sub:`PEAK Level 1, Foresight Sports`,
+  cert3t:`Club Fitting`, cert3sub:`KGFA Club Fitter 1st Class`,
+  cert4t:`Mental Fitting`, cert4sub:`Sports Psychology Counselor`,
+
+  boxTitle:`100% 회원 예약제`, boxDesc:`모든 피팅 세션은 사전 예약을 통해서만 진행되며, 예약 고객에게 방해받지 않는 전용 시간을 보장합니다.`,
+  ctaTitle:`피팅 상담을 신청해 보세요`, ctaDesc:`전문 피팅사가 1:1로 상담해 드립니다.`, ctaBtn:`피팅 상담 신청`,
+};
+T.en.golfFitting = {
+  pageEyebrow:`3F Golf Fitting · Fitting Service`, pageTitle:`Scientific fitting that diagnoses body, clubs, and swing with precision equipment`, pageDesc:`Not just practice — data-driven diagnosis focused on improving your game in a short time.`,
+
+  pillarsEyebrow:`3 Fitting Pillars`, pillarsTitle:`Body · Club · Swing — Three Fitting Disciplines`,
+  pillarsDesc:`Golf instruction breaks down into many elements — body, equipment, and swing among them. BizHub Mir's 3F focuses on three certified fitting disciplines.`,
+  pil1t:`Body Fitting`, pil1sub:`TPI-Based`, pil1d:`Diagnoses body balance and range of motion to build the physical foundation for your swing.`,
+  pil2t:`Club Fitting`, pil2sub:`KGFA (Korea Golf Fitting Association) Standard`, pil2d:`Adjusts club specs — shaft, head, lie angle, and more — to match your individual swing.`,
+  pil3t:`Swing Fitting`, pil3sub:`Foresight Sports PEAK Program`, pil3d:`Diagnoses swing path and impact through precision data and proposes an improvement direction.`,
+
+  processEyebrow:`Process`, processTitle:`The Fitting Process`,
+  s1t:`Diagnose`, s1d:`Measure body balance and swing path with precision analysis equipment.`,
+  s2t:`Analyze`, s2d:`Analyze club-spec fit (shaft, head, lie angle, etc.) based on the measured data.`,
+  s3t:`Recommend`, s3d:`Propose a personalized club setup and swing-improvement direction.`,
+
+  expertEyebrow:`Expert`, expertTitle:`The Fitter Behind the Service`,
+  expertName:`Dr. Suh Fitter (Suh Chang Woo)`, expertPh:`Dr. Suh Fitter`,
+  expertBio:`Holding a Ph.D. in chemical engineering, Suh Chang Woo spent over 20 years in pharmaceutical R&D and production at Daewoong Pharmaceutical in Korea and Indonesia. He went on to study swing mechanics, club fitting, and sports psychology, becoming a certified expert across golf's three core fitting disciplines — swing, body, and club. His data-driven approach accounts for each golfer's unique body, age, and tendencies to recommend the most effective path forward.`,
+  cert1t:`Body Fitting`, cert1sub:`TPI Level 1 Certified`,
+  cert2t:`Swing Fitting`, cert2sub:`PEAK Level 1, Foresight Sports`,
+  cert3t:`Club Fitting`, cert3sub:`KGFA Club Fitter 1st Class`,
+  cert4t:`Mental Fitting`, cert4sub:`Sports Psychology Counselor`,
+
+  boxTitle:`100% by Reservation`, boxDesc:`Every fitting session runs strictly by appointment, guaranteeing undisturbed, dedicated time for each guest.`,
+  ctaTitle:`Book a fitting consultation`, ctaDesc:`Get a 1:1 consultation with a professional fitter.`, ctaBtn:`Book a Fitting`,
+};
+
+function renderGolfFitting(lang){ const t = T[lang].golfFitting; return `
+${siteHeader('golf-fitting', lang)}
+${pageHero('golf-fitting','green', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.pillarsEyebrow)}
+    <h2 class="sec-h2">${t.pillarsTitle}</h2>
+    <p class="sec-desc">${t.pillarsDesc}</p>
+    <div class="grid-3">
+      <div class="card icon-top">
+        <div class="ic">${icon('users',24)}</div>
+        <h4>${t.pil1t}</h4>
+        <span class="badge green" style="margin-bottom:10px;">${t.pil1sub}</span>
+        <p>${t.pil1d}</p>
+      </div>
+      <div class="card icon-top">
+        <div class="ic">${icon('briefcase',24)}</div>
+        <h4>${t.pil2t}</h4>
+        <span class="badge green" style="margin-bottom:10px;">${t.pil2sub}</span>
+        <p>${t.pil2d}</p>
+      </div>
+      <div class="card icon-top">
+        <div class="ic">${icon('target',24)}</div>
+        <h4>${t.pil3t}</h4>
+        <span class="badge green" style="margin-bottom:10px;">${t.pil3sub}</span>
+        <p>${t.pil3d}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.processEyebrow)}
+    <h2 class="sec-h2">${t.processTitle}</h2>
+    <div style="max-width:520px; margin-top:24px;">
+      <div class="step"><div class="num">1</div><div><b>${t.s1t}</b><p>${t.s1d}</p></div></div>
+      <div class="step-line"></div>
+      <div class="step"><div class="num">2</div><div><b>${t.s2t}</b><p>${t.s2d}</p></div></div>
+      <div class="step-line"></div>
+      <div class="step"><div class="num">3</div><div><b>${t.s3t}</b><p>${t.s3d}</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.expertEyebrow)}
+    <h2 class="sec-h2">${t.expertTitle}</h2>
+    <div class="grid-2" style="margin-top:22px; align-items:start;">
+      ${ph(t.expertPh,'green')}
+      <div>
+        <h3 style="font-size:16px; font-weight:800; color:var(--ink); margin:0 0 10px;">${t.expertName}</h3>
+        <p style="font-size:13.4px; color:var(--ink-soft); line-height:1.8; margin:0;">${t.expertBio}</p>
+      </div>
+    </div>
+    <div class="grid-4" style="margin-top:18px;">
+      <div class="stat"><div class="ic">${icon('users',20)}</div><b>${t.cert1t}</b><span>${t.cert1sub}</span></div>
+      <div class="stat"><div class="ic">${icon('target',20)}</div><b>${t.cert2t}</b><span>${t.cert2sub}</span></div>
+      <div class="stat"><div class="ic">${icon('briefcase',20)}</div><b>${t.cert3t}</b><span>${t.cert3sub}</span></div>
+      <div class="stat"><div class="ic">${icon('shield',20)}</div><b>${t.cert4t}</b><span>${t.cert4sub}</span></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="box green">
+      <h4>${icon('target',16)} ${t.boxTitle}</h4>
+      <p>${t.boxDesc}</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band" style="background:var(--green-soft); border-color:transparent;">
+      <div>
+        <h3 style="color:var(--green);">${t.ctaTitle}</h3>
+        <p>${t.ctaDesc}</p>
+      </div>
+      <a class="btn btn-green" onclick="navigate('contact')">${icon('chat',16)} ${t.ctaBtn}</a>
+    </div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderGolfFitting(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>

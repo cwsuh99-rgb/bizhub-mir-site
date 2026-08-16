@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About BizHub | BizHub Mir</title>
+<meta name="description" content="BizHub Mir는 인도네시아에서 새롭게 비즈니스를 시작하는 데 꼭 필요한 요소만 모아 제공하는 공간입니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`About BizHub | BizHub Mir`, en:`About BizHub | BizHub Mir` };
+
+T.ko.about = {
+  pageEyebrow:`About BizHub`, pageTitle:`인도네시아 진출에 가장 믿을 수 있는 길잡이가 되겠습니다.`, pageDesc:`BizHub는 인도네시아에서 새롭게 비즈니스를 시작하는 데 꼭 필요한 요소만 모아 제공하는 공간입니다. 어떻게 시작할지 막막하고, 믿을 수 있는 사람이 필요할 때, 시원하게 알려주는 주고, 편안하게 일을 하실 수 있는 공간을 제공합니다.`,
+  storyEyebrow:`Our Story`, storyTitle:`왜 BizHub인가`, storyDesc:`낯선 나라에서 사업을 시작하는 일은 정보도, 인프라도, 신뢰할 파트너도 부족한 채로 시작되는 경우가 많습니다. BizHub는 그 시작점을 한 건물 안에 압축했습니다.`,
+  c1t:`원스톱 인프라`, c1d:`카페 · 오피스 · 법인설립 컨설팅 · 네트워킹 공간까지, 여러 업체를 거치지 않고 한 곳에서 해결합니다.`,
+  c2t:`신뢰할 수 있는 파트너`, c2d:`검증된 Notary·세무 컨설팅 네트워크와 연계해 법적으로 안전하게 사업을 시작하도록 돕습니다.`,
+  c3t:`합리적인 비용`, c3d:`BizHub는 자가 보유 자산 기반으로 운영되어, 임차 기반 경쟁사 대비 합리적인 조건을 제공합니다.`,
+  personaEyebrow:`Who It's For`, personaTitle:`이런 분들을 위한 공간입니다`,
+  personaDesc:`BizHub Mir는 인도네시아 진출 여정의 각기 다른 단계에서 이 공간을 찾는 세 그룹의 고객을 함께 고려해 설계되었습니다.`,
+  p1t:`인도네시아 창업자`, p1d:`PT PMA 설립을 준비 중이며, 현지 제도·문화 경험이 부족해 인프라가 갖춰진 공간과 신뢰할 파트너가 필요한 분.`,
+  p2t:`주변 유동인구 · 학생`, p2d:`Lippo, Jababeka에 입주한 기업인과 가족에게 직접 로스팅한 신선한 커피와 프랑스 르방으로 만든 건강한 빵을 찾는 분.`,
+  p3t:`비즈니스 골프 수요층`, p3d:`주재원·사업가로서 접대와 네트워킹을 위해 단기간에 골프 실력을 향상시키고 싶은 분. 바디·클럽·스윙 피팅을 통해 가장 효율적으로 골프 실력 향상.`,
+  linksEyebrow:`Quick Links`, linksTitle:`BizHub 더 알아보기`,
+  linkLocT:`오시는 길`, linkLocD:`위치, 영업시간, 교통·주차 안내를 확인하세요.`,
+  linkNewsT:`소식`, linkNewsD:`오픈 준비 과정과 그랜드 오픈 소식을 만나보세요.`,
+};
+T.en.about = {
+  pageEyebrow:`About BizHub`, pageTitle:`Setting up in Indonesia, without starting from zero`, pageDesc:`BizHub Mir brings together everything you need to start a new business in Indonesia, in one place.`,
+  storyEyebrow:`Our Story`, storyTitle:`Why BizHub`, storyDesc:`Starting a business in an unfamiliar country often means missing information, infrastructure, and trusted partners. BizHub compresses that starting point into one building.`,
+  c1t:`One-Stop Infrastructure`, c1d:`Café, office, company-registration consulting, and networking space — all solved in one place instead of many vendors.`,
+  c2t:`Trusted Partners`, c2d:`Works with vetted Notary and tax-consulting networks to help you start legally and safely.`,
+  c3t:`Reasonable Cost`, c3d:`Operated on self-owned property, offering more reasonable terms than lease-based competitors.`,
+  personaEyebrow:`Who It's For`, personaTitle:`Who We Built This For`,
+  personaDesc:`BizHub Mir was designed around three groups of customers who each turn to this space at a different stage of their Indonesia journey.`,
+  p1t:`Prospective Founders in Indonesia`, p1d:`Preparing to register a PT PMA, and in need of a ready-made space and a trusted partner while still new to local regulations and culture.`,
+  p2t:`Nearby Foot Traffic & Students`, p2d:`President University students and industrial-estate workers looking for great-value coffee and bread.`,
+  p3t:`Business Golf Audience`, p3d:`Korean corporate staff and business owners interested in precision fitting and swing analysis for hosting and networking.`,
+  linksEyebrow:`Quick Links`, linksTitle:`More about BizHub`,
+  linkLocT:`Location`, linkLocD:`Check the address, hours, and transit/parking info.`,
+  linkNewsT:`News`, linkNewsD:`Follow our opening progress and grand-opening news.`,
+};
+
+function renderAbout(lang){ const t = T[lang].about; return `
+${siteHeader('about', lang)}
+${pageHero('about','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.storyEyebrow)}
+    <h2 class="sec-h2">${t.storyTitle}</h2>
+    <p class="sec-desc">${t.storyDesc}</p>
+    <div class="grid-3">
+      <div class="card icon-top"><div class="ic">${icon('building',24)}</div><h4>${t.c1t}</h4><p>${t.c1d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('shield',24)}</div><h4>${t.c2t}</h4><p>${t.c2d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('users',24)}</div><h4>${t.c3t}</h4><p>${t.c3d}</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.personaEyebrow)}
+    <h2 class="sec-h2">${t.personaTitle}</h2>
+    <p class="sec-desc">${t.personaDesc}</p>
+    <div class="grid-3">
+      <div class="card icon-top"><div class="ic">${icon('flag',24)}</div><h4>${t.p1t}</h4><p>${t.p1d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('coffee',24)}</div><h4>${t.p2t}</h4><p>${t.p2d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('target',24)}</div><h4>${t.p3t}</h4><p>${t.p3d}</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.linksEyebrow)}
+    <h2 class="sec-h2">${t.linksTitle}</h2>
+    <div class="grid-2" style="margin-top:24px;">
+      <a class="card" onclick="navigate('location')"><h4>${icon('mapPin',16)} &nbsp;${t.linkLocT}</h4><p>${t.linkLocD}</p></a>
+      <a class="card" onclick="navigate('news')"><h4>${icon('camera',16)} &nbsp;${t.linkNewsT}</h4><p>${t.linkNewsD}</p></a>
+    </div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderAbout(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>

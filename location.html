@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오시는 길 | BizHub Mir</title>
+<meta name="description" content="Ruko Hollywood Boulevard, Jl. Movie Land No.21 Blok A5B, Cikarang Utara — 자바베카 산업단지·President University·Jababeka 골프장이 모두 5분 이내 거리에 있습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`오시는 길 | BizHub Mir`, en:`Location | BizHub Mir` };
+
+T.ko.location = {
+  pageEyebrow:`BizHub · 오시는 길`, pageTitle:`자바베카 중심, 찾아오기 쉬운 위치`, pageDesc:`산업단지·대학·골프장이 모두 가까운 Ruko Hollywood Boulevard에 위치합니다.`,
+  mapPh:`Google Maps 임베드 영역`,
+  addrLabel:`주소`, phoneLabel:`전화 / WhatsApp`, emailLabel:`이메일`, igLabel:`Instagram`,
+  directionsBtn:`길찾기 문의하기`,
+  hoursEyebrow:`Hours`, hoursTitle:`층별 영업시간`,
+  th1:`층`, th2:`운영 방식`, th3:`비고`,
+  r1a:`1F 카페`, r1b:`매일 08:00–21:00`, r1c:`워크인 상시 환영`,
+  r2a:`2F 오피스`, r2b:`평일 09:00–18:00`, r2c:`입주사는 24시간 출입 가능(스마트도어록)`,
+  r3a:`3F 골프피팅`, r3b:`100% 예약제`, r3c:`사전 예약 후 방문`,
+};
+T.en.location = {
+  pageEyebrow:`BizHub · Location`, pageTitle:`In the heart of Jababeka, easy to find`, pageDesc:`Located on Ruko Hollywood Boulevard, close to the industrial estate, the university, and the golf course.`,
+  mapPh:`Google Maps embed area`,
+  addrLabel:`Address`, phoneLabel:`Phone / WhatsApp`, emailLabel:`Email`, igLabel:`Instagram`,
+  directionsBtn:`Get Directions / Contact Us`,
+  hoursEyebrow:`Hours`, hoursTitle:`Hours by Floor`,
+  th1:`Floor`, th2:`Hours`, th3:`Notes`,
+  r1a:`1F Café`, r1b:`Daily 08:00–21:00`, r1c:`Walk-ins always welcome`,
+  r2a:`2F Office`, r2b:`Weekdays 09:00–18:00`, r2c:`Tenants have 24-hr access (smart door lock)`,
+  r3a:`3F Golf Fitting`, r3b:`100% by reservation`, r3c:`Visit by appointment only`,
+};
+
+function renderLocation(lang){ const t = T[lang].location; return `
+${siteHeader('location', lang)}
+${pageHero('location','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    <div class="grid-2">
+      <div class="map-ph" style="min-height:280px;">${icon('mapPin',30)}<span>${t.mapPh}</span></div>
+      <div>
+        <div class="contact-row"><div class="ic">${icon('mapPin',16)}</div><div><b>${t.addrLabel}</b><span>Ruko Hollywood Boulevard, Jl. Movie Land No.21 Blok A5B, Cikarang Utara</span></div></div>
+        <div class="contact-row"><div class="ic">${icon('phone',16)}</div><div><b>${t.phoneLabel}</b><span>+62 8XX-XXXX-XXXX</span></div></div>
+        <div class="contact-row"><div class="ic">${icon('chat',16)}</div><div><b>${t.emailLabel}</b><span>hello@bizcafe.id</span></div></div>
+        <div class="contact-row"><div class="ic">${icon('camera',16)}</div><div><b>${t.igLabel}</b><span>@bizcafe.id</span></div></div>
+        <a class="btn btn-navy" style="margin-top:18px;" onclick="navigate('contact')">${t.directionsBtn} ${icon('arrowRight',14)}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.hoursEyebrow)}
+    <h2 class="sec-h2">${t.hoursTitle}</h2>
+    <div class="table-scroll" style="margin-top:22px;"><table>
+      <thead><tr><th>${t.th1}</th><th>${t.th2}</th><th>${t.th3}</th></tr></thead>
+      <tbody>
+        <tr><td>${t.r1a}</td><td>${t.r1b}</td><td>${t.r1c}</td></tr>
+        <tr><td>${t.r2a}</td><td>${t.r2b}</td><td>${t.r2c}</td></tr>
+        <tr><td>${t.r3a}</td><td>${t.r3b}</td><td>${t.r3c}</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderLocation(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>

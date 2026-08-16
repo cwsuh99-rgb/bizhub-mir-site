@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BizHub Mir — Cikarang 3-in-1 Business Hub</title>
+<meta name="description" content="1F 카페 · 2F 프라이빗/버추얼 오피스 · 3F 골프 피팅 스튜디오 — 자바베카에 하나뿐인 3-in-1 비즈니스 플랫폼, BizHub Mir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`BizHub Mir — 찌까랑 3-in-1 비즈니스 허브`, en:`BizHub Mir — Jababeka 3-in-1 Business Hub` };
+
+T.ko.home = {
+  eyebrow:`Cikarang · 3-in-1 Business Hub`,
+  h1:`커피 한 잔으로 시작해,<br>신사업을 키우고, <em>골프로 네트워킹까지</em>`,
+  lead:`1F 카페 · 2F 프라이빗/버추얼 오피스 · 3F 골프 피팅 스튜디오 — 찌까랑에 하나뿐인 3-in-1 비즈니스 플랫폼.`,
+  ctaPrimary:`무료 입주상담 신청`,
+  trustLabel:`이런 곳들과 가깝습니다`, trust1:`Jababeka 산업단지`, trust2:`Lippo 산업단지`, trust3:`Jababeka 골프 클럽`,
+  statLabel:`산업단지 입주기업`, statNum:`1,200+`, statSub:`Jababeka Industrial Estate`,
+  tag1:`1F 카페`, tag2:`2F 오피스`, tag3:`3F 골프피팅`, tag4:`창업 컨설팅`, tag5:`스크린골프`, tagMore:`+3`,
+  f1t:`자가 보유 자산`, f1d:`임대료 부담 없는 구조적 안정성으로 오래 운영되는 거점입니다.`,
+  f2t:`도보 5분 입지`, f2d:`Jababeka 골프 클럽과 산업단지 사이, 접근성 좋은 위치입니다.`,
+  f3t:`검증된 파트너`, f3d:`Notary·세무 컨설팅 네트워크와 연계해 안전하게 진행합니다.`,
+  f4t:`유일한 골프피팅`, f4d:`자바베카에서 정밀 골프 피팅을 결합 제공하는 곳은 이곳뿐입니다.`,
+  floorsEyebrow:`Our Floors`, floorsTitle:`3개 층, 하나의 비즈니스 여정`, floorsDesc:`각 층은 서로 다른 목적을 갖지만, 하나의 통합 멤버십으로 자연스럽게 연결됩니다.`,
+  floor1t:`1F 카페`, floor1d:`직접 로스팅한 원두와 직접 구운 건강빵. 미팅과 대기까지 겸하는 오픈 라운지.`, floor1l:`메뉴 보러가기`,
+  floor2t:`2F 오피스`, floor2d:`프라이빗 2인실과 법인 설립 컨설팅(Notary·OSS·Coretax)을 한 번에 — 외국인 창업자를 위한 원스톱 인프라.`, floor2l:`오피스 살펴보기`,
+  floor3t:`3F 골프피팅`, floor3d:`정밀 분석 장비로 바디·클럽·스윙을 진단하는 과학적 피팅. 100% 회원 예약제 프리미엄 서비스.`, floor3l:`피팅 알아보기`,
+  diffTitle:`자바베카 유일의 골프 피팅 결합 공간`, diffDesc:`카페·오피스 결합 공간은 있어도, 비즈니스에 꼭 필요한 골프 피팅, 스크린 골프까지 한 건물에서 제공하는 곳은 BizHub가 유일합니다.`,
+  locationEyebrow:`Location`, locationTitle:`오시는 길`, mapPh:`Google Maps 임베드 영역`,
+  locationDesc:`Ruko Hollywood Boulevard, Jl. Movie Land No.21 Blok A5B, Cikarang Utara — 자바베카 산업단지·President University·Jababeka 골프장이 모두 5분 이내 거리에 있습니다.`,
+  locationLinkText:`오시는 길 자세히 보기`,
+  ctaTitle:`무엇이든 편하게 물어보세요`, ctaDesc:`카페 방문부터 오피스 입주, 골프 피팅 예약까지 한 번에 문의하세요.`, ctaBtn:`문의하기`,
+};
+T.en.home = {
+  eyebrow:`Cikarang · 3-in-1 Business Hub`,
+  h1:`Start with a coffee,<br>build your business, <em>and network on the green.</em>`,
+  lead:`1F Café · 2F Private/Virtual Office · 3F Golf Fitting Studio — Cikarang's only 3-in-1 business platform.`,
+  ctaPrimary:`Book a Free Consultation`,
+  trustLabel:`Close to`, trust1:`Jababeka Industrial Estate`, trust2:`Lippo Industrial Estate`, trust3:`President University`, trust4:`Jababeka Golf Club`,
+  statLabel:`Companies in the estate`, statNum:`1,200+`, statSub:`Jababeka Industrial Estate`,
+  tag1:`1F Café`, tag2:`2F Office`, tag3:`3F Golf Fitting`, tag4:`Startup Consulting`, tag5:`Screen Golf`, tagMore:`+3`,
+  f1t:`Self-Owned Property`, f1d:`No rent burden — a stable base built to operate for the long term.`,
+  f2t:`5-Min Walk Location`, f2d:`Conveniently located between Jababeka Golf Club and the industrial estate.`,
+  f3t:`Vetted Partners`, f3d:`Works with trusted Notary and tax consulting networks for a safe process.`,
+  f4t:`Only Golf Fitting Here`, f4d:`The only place in Jababeka offering precision golf fitting on-site.`,
+  floorsEyebrow:`Our Floors`, floorsTitle:`Three Floors, One Business Journey`, floorsDesc:`Each floor serves a different purpose, yet they connect naturally through one integrated membership.`,
+  floor1t:`1F Café`, floor1d:`Freshly roasted coffee, house-baked healthy bread. An open lounge that doubles as a meeting and waiting space.`, floor1l:`View the menu`,
+  floor2t:`2F Office`, floor2d:`Private 2-person offices plus company registration consulting (Notary · OSS · Coretax) — one-stop infrastructure for foreign founders.`, floor2l:`Explore the office`,
+  floor3t:`3F Golf Fitting`, floor3d:`Scientific fitting that diagnoses body, clubs, and swing with precision equipment. A premium 100%-by-reservation service.`, floor3l:`Learn about fitting`,
+  diffTitle:`The Only Golf Fitting Space in Jababeka`, diffDesc:`Cafés combined with offices exist elsewhere — Creya Spaces, JW Space, and others — but BizHub Mir is the only place that adds precision golf fitting under the same roof.`,
+  locationEyebrow:`Location`, locationTitle:`Getting Here`, mapPh:`Google Maps embed area`,
+  locationDesc:`Ruko Hollywood Boulevard, Jl. Movie Land No.21 Blok A5B, Cikarang Utara — within 5 minutes of the Jababeka industrial estate, President University, and Jababeka Golf Club.`,
+  locationLinkText:`See full location details`,
+  ctaTitle:`Ask us anything`, ctaDesc:`From a café visit to office move-in or a golf fitting session — reach out anytime.`, ctaBtn:`Contact Us`,
+};
+
+function renderHome(lang){ const t = T[lang].home; return `
+${siteHeader('home', lang)}
+<section class="hero-home">
+  <div class="hero-home-in">
+    <div class="hero-copy">
+      ${eyebrow(t.eyebrow)}
+      <h1>${t.h1}</h1>
+      <p class="lead">${t.lead}</p>
+      <div class="hero-cta-row">
+        <a class="btn btn-navy" onclick="navigate('office-consulting')">${t.ctaPrimary} ${icon('arrowRight',15)}</a>
+      </div>
+      <div class="trust-row">
+        <span class="lbl">${t.trustLabel}</span>
+        <span class="trust-chip">${t.trust1}</span>
+        <span class="trust-chip">${t.trust2}</span>
+        <span class="trust-chip">${t.trust3}</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <div class="glyph">${icon('cluster',180)}</div>
+        <div class="stat-float">
+          <div class="lbl">${t.statLabel}</div>
+          <div class="num">${t.statNum}</div>
+          <div class="sub">${t.statSub}</div>
+        </div>
+        <div class="tag-overlay">
+          <span class="tag-pill">${t.tag1}</span>
+          <span class="tag-pill">${t.tag2}</span>
+          <span class="tag-pill">${t.tag3}</span>
+          <span class="tag-pill">${t.tag4}</span>
+          <span class="tag-pill">${t.tag5}</span>
+          <span class="tag-pill more">${t.tagMore}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="feature-strip">
+    <div class="feature-item"><div class="ic">${icon('building',26)}</div><b>${t.f1t}</b><span>${t.f1d}</span></div>
+    <div class="feature-item"><div class="ic">${icon('mapPin',26)}</div><b>${t.f2t}</b><span>${t.f2d}</span></div>
+    <div class="feature-item"><div class="ic">${icon('shield',26)}</div><b>${t.f3t}</b><span>${t.f3d}</span></div>
+    <div class="feature-item"><div class="ic">${icon('target',26)}</div><b>${t.f4t}</b><span>${t.f4d}</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.floorsEyebrow)}
+    <h2 class="sec-h2">${t.floorsTitle}</h2>
+    <p class="sec-desc">${t.floorsDesc}</p>
+    <div class="floor-grid">
+      <div class="floor-card">
+        <div class="floor-chip cafe">${icon('coffee',22)}</div>
+        <h3>${t.floor1t}</h3>
+        <p>${t.floor1d}</p>
+        <a class="floor-link cafe" onclick="navigate('cafe-menu')">${t.floor1l} ${icon('arrowRight',14)}</a>
+      </div>
+      <div class="floor-card">
+        <div class="floor-chip office">${icon('briefcase',22)}</div>
+        <h3>${t.floor2t}</h3>
+        <p>${t.floor2d}</p>
+        <a class="floor-link office" onclick="navigate('office-guide')">${t.floor2l} ${icon('arrowRight',14)}</a>
+      </div>
+      <div class="floor-card">
+        <div class="floor-chip golf">${icon('target',22)}</div>
+        <h3>${t.floor3t}</h3>
+        <p>${t.floor3d}</p>
+        <a class="floor-link golf" onclick="navigate('golf-fitting')">${t.floor3l} ${icon('arrowRight',14)}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="diff-banner">
+      <div class="ic">${icon('star',36)}</div>
+      <div>
+        <h4>${t.diffTitle}</h4>
+        <p>${t.diffDesc}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.locationEyebrow)}
+    <h2 class="sec-h2">${t.locationTitle}</h2>
+    <div class="grid-2" style="margin-top:26px;">
+      <div class="map-ph">${icon('mapPin',30)}<span>${t.mapPh}</span></div>
+      <div>
+        <p style="font-size:13.8px; color:var(--ink-soft); line-height:1.8;">${t.locationDesc}</p>
+        <a class="btn btn-line" onclick="navigate('location')">${t.locationLinkText} ${icon('arrowRight',14)}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h3>${t.ctaTitle}</h3>
+        <p>${t.ctaDesc}</p>
+      </div>
+      <a class="btn btn-navy" onclick="navigate('contact')">${icon('chat',16)} ${t.ctaBtn}</a>
+    </div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderHome(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공간 & 인테리어 | 1F 카페 | BizHub Mir</title>
+<meta name="description" content="모던하고 효율적인 인테리어로 카페 손님과 2F·3F 이용 고객 모두를 위한 공간을 지향합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`공간 & 인테리어 | 1F 카페 | BizHub Mir`, en:`Space & Interior | 1F Café | BizHub Mir` };
+
+T.ko.cafeSpace = {
+  pageEyebrow:`1F 카페 · 공간 & 인테리어`, pageTitle:`머무르고 싶은, 일하기도 좋은 공간`, pageDesc:`모던하고 효율적인 인테리어로 카페 손님과 2F·3F 이용 고객 모두를 위한 공간을 지향합니다.`,
+  ph1:`모던 카페존`, ph2:`라운지 좌석`, ph3:`카운터 · POS`,
+  boxTitle:`2F/3F 고객 대기·미팅 겸용 공간`, boxDesc:`1F는 카페 손님뿐 아니라 2F 오피스 방문객, 3F 피팅 예약 고객의 대기·미팅 공간으로도 활용됩니다. 오전에는 브런치·샌드위치, 오후에는 수제빵을 즐기실 수 있습니다.`,
+  statHours:`09:00 – 21:00`, statHoursSub:`매일 운영`, statWifi:`Free Wi-Fi`, statWifiSub:`전 좌석 이용 가능`,
+};
+T.en.cafeSpace = {
+  pageEyebrow:`1F Café · Space & Interior`, pageTitle:`A space you'll want to stay in, and work in`, pageDesc:`A modern, efficient interior designed for café guests and 2F/3F visitors alike.`,
+  ph1:`Modern café zone`, ph2:`Lounge seating`, ph3:`Counter & POS`,
+  boxTitle:`A shared waiting & meeting space for 2F/3F guests`, boxDesc:`1F serves not only café guests but also office visitors from 2F and fitting customers from 3F as a waiting and meeting space. Enjoy brunch and sandwiches in the morning, and fresh-baked bread in the afternoon.`,
+  statHours:`08:00 – 21:00`, statHoursSub:`Open daily`, statWifi:`Free Wi-Fi`, statWifiSub:`Available at every seat`,
+};
+
+function renderCafeSpace(lang){ const t = T[lang].cafeSpace; return `
+${siteHeader('cafe-space', lang)}
+${pageHero('cafe-space','coffee', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    <div class="grid-3">
+      ${ph(t.ph1,'coffee')}${ph(t.ph2,'coffee')}${ph(t.ph3,'coffee')}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="box">
+      <h4>${icon('users',16)} ${t.boxTitle}</h4>
+      <p>${t.boxDesc}</p>
+    </div>
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="stat"><div class="ic">${icon('clock',22)}</div><b>${t.statHours}</b><span>${t.statHoursSub}</span></div>
+      <div class="stat"><div class="ic">${icon('wifi',22)}</div><b>${t.statWifi}</b><span>${t.statWifiSub}</span></div>
+    </div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderCafeSpace(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>

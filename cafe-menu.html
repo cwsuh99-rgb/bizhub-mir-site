@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메뉴판 | 1F 카페 | BizHub Mir</title>
+<meta name="description" content="커피 · 주스 · 차 · 베이커리, BizHub Mir만의 가성비와 신선함을 만나보세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`메뉴판 | 1F 카페 | BizHub Mir`, en:`Menu | 1F Café | BizHub Mir` };
+
+T.ko.cafeMenu = {
+  pageEyebrow:`1F 카페 · 메뉴판`, pageTitle:`직접 로스팅한 원두, 매일 굽는 건강빵`, pageDesc:`커피 · 주스 · 차 · 베이커리, BizHub Mir만의 가성비와 신선함을 만나보세요.`,
+  promoBadge:`PROMOTION`, promoTitle:`음료 Rp 30,000 + 한국 인기 제과 무료 결합`, promoDesc:`호두과자 등 한국에서 인기 있는 제과를 음료 주문 시 무료로 제공합니다 (기간 한정 프로모션).`,
+  brunchHeading:`브런치 & 샌드위치`, brunchNote:`오전에는 브런치·샌드위치, 오후에는 자가제빵 건강빵 — 시간대별로 다른 메뉴를 즐길 수 있는 타임 슬롯 구성입니다.`,
+  br1n:`아보카도 브런치 플레이트`, br1d:`삶은 에그 · 토스트 · 그린 샐러드 구성, 오전 한정`, br1p:`Rp 38,000`,
+  br2n:`햄 & 치즈 샌드위치`, br2d:`자가제빵 건강빵으로 매일 아침 제조`, br2p:`Rp 32,000`,
+  coffeeHeading:`커피`,
+  co1n:`아메리카노`, co1d:`진한 로스팅, ICE/HOT 선택`, co1p:`Rp 25,000`,
+  co2n:`카페라떼`, co2d:`부드러운 우유와 에스프레소`, co2p:`Rp 30,000`,
+  co3n:`카푸치노`, co3d:`풍성한 우유 거품`, co3p:`Rp 30,000`,
+  co4n:`에스프레소`, co4d:`싱글/더블 선택 가능`, co4p:`Rp 25,000`,
+  juiceHeading:`주스 & 차`,
+  ju1n:`딸기 / 사과 / 파인애플 / 바나나 주스`, ju1d:`매일 아침 생과일로 제조`, ju1p:`Rp 30,000`,
+  ju2n:`녹차 / 허브차`, ju2d:`은은한 티 라인업`, ju2p:`Rp 25,000`,
+  bakeryHeading:`베이커리 — 홈베이커리 건강빵`, bp1:`건강빵 라인업 1`, bp2:`건강빵 라인업 2`, bp3:`건강빵 라인업 3`,
+  linkLocation:`오시는 길 보기`, linkSpace:`공간 & 인테리어 보기`,
+};
+T.en.cafeMenu = {
+  pageEyebrow:`1F Café · Menu`, pageTitle:`Freshly roasted beans, healthy bread baked daily`, pageDesc:`Coffee · juice · tea · bakery — taste the value and freshness that make BizHub Mir different.`,
+  promoBadge:`PROMOTION`, promoTitle:`Rp 30,000 drink + a free popular Korean pastry`, promoDesc:`Enjoy a free popular Korean pastry, like hodugwaja (walnut cake), with any drink order (limited-time promotion).`,
+  brunchHeading:`Brunch & Sandwiches`, brunchNote:`Brunch and sandwiches in the morning, house-baked healthy bread in the afternoon — a menu that changes with the time of day.`,
+  br1n:`Avocado Brunch Plate`, br1d:`Boiled egg, toast, and green salad — morning only`, br1p:`Rp 38,000`,
+  br2n:`Ham & Cheese Sandwich`, br2d:`Made fresh every morning on house-baked healthy bread`, br2p:`Rp 32,000`,
+  coffeeHeading:`Coffee`,
+  co1n:`Americano`, co1d:`Rich roast, choice of iced or hot`, co1p:`Rp 25,000`,
+  co2n:`Café Latte`, co2d:`Smooth milk with espresso`, co2p:`Rp 30,000`,
+  co3n:`Cappuccino`, co3d:`Rich, foamy milk`, co3p:`Rp 30,000`,
+  co4n:`Espresso`, co4d:`Single or double shot`, co4p:`Rp 22,000`,
+  juiceHeading:`Juice & Tea`,
+  ju1n:`Strawberry / Apple / Pineapple / Banana Juice`, ju1d:`Made fresh every morning`, ju1p:`Rp 28,000`,
+  ju2n:`Green Tea / Herbal Tea`, ju2d:`A gentle tea lineup`, ju2p:`Rp 22,000`,
+  bakeryHeading:`Bakery — House-Baked Healthy Bread`, bp1:`Healthy bread lineup 1`, bp2:`Healthy bread lineup 2`, bp3:`Healthy bread lineup 3`,
+  linkLocation:`View directions`, linkSpace:`See space & interior`,
+};
+
+function renderCafeMenu(lang){ const t = T[lang].cafeMenu; return `
+${siteHeader('cafe-menu', lang)}
+${pageHero('cafe-menu','coffee', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    <span class="badge coffee">${t.promoBadge}</span>
+    <h2 class="sec-h2" style="margin-top:12px;">${t.promoTitle}</h2>
+    <p class="sec-desc">${t.promoDesc}</p>
+
+    <h3 style="font-size:15px; font-weight:800; color:var(--coffee); margin:28px 0 6px;">${t.brunchHeading}</h3>
+    <p style="font-size:12.6px; color:var(--ink-soft); margin:0 0 14px;">${t.brunchNote}</p>
+    <div class="grid-2">
+      <div class="menu-item"><div class="ph">${icon('coffee',22)}</div><div class="info"><b>${t.br1n}</b><span>${t.br1d}</span></div><div class="price">${t.br1p}</div></div>
+      <div class="menu-item"><div class="ph">${icon('coffee',22)}</div><div class="info"><b>${t.br2n}</b><span>${t.br2d}</span></div><div class="price">${t.br2p}</div></div>
+    </div>
+
+    <h3 style="font-size:15px; font-weight:800; color:var(--coffee); margin:28px 0 14px;">${t.coffeeHeading}</h3>
+    <div class="grid-2">
+      <div class="menu-item"><div class="ph">${icon('coffee',22)}</div><div class="info"><b>${t.co1n}</b><span>${t.co1d}</span></div><div class="price">${t.co1p}</div></div>
+      <div class="menu-item"><div class="ph">${icon('coffee',22)}</div><div class="info"><b>${t.co2n}</b><span>${t.co2d}</span></div><div class="price">${t.co2p}</div></div>
+      <div class="menu-item"><div class="ph">${icon('coffee',22)}</div><div class="info"><b>${t.co3n}</b><span>${t.co3d}</span></div><div class="price">${t.co3p}</div></div>
+      <div class="menu-item"><div class="ph">${icon('coffee',22)}</div><div class="info"><b>${t.co4n}</b><span>${t.co4d}</span></div><div class="price">${t.co4p}</div></div>
+    </div>
+
+    <h3 style="font-size:15px; font-weight:800; color:var(--coffee); margin:28px 0 14px;">${t.juiceHeading}</h3>
+    <div class="grid-2">
+      <div class="menu-item"><div class="ph">${icon('star',22)}</div><div class="info"><b>${t.ju1n}</b><span>${t.ju1d}</span></div><div class="price">${t.ju1p}</div></div>
+      <div class="menu-item"><div class="ph">${icon('star',22)}</div><div class="info"><b>${t.ju2n}</b><span>${t.ju2d}</span></div><div class="price">${t.ju2p}</div></div>
+    </div>
+
+    <h3 style="font-size:15px; font-weight:800; color:var(--coffee); margin:28px 0 14px;">${t.bakeryHeading}</h3>
+    <div class="grid-3">
+      ${ph(t.bp1,'coffee')}${ph(t.bp2,'coffee')}${ph(t.bp3,'coffee')}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap" style="display:flex; gap:12px; flex-wrap:wrap;">
+    <a class="btn btn-line" onclick="navigate('location')">${icon('mapPin',16)} ${t.linkLocation}</a>
+    <a class="btn btn-line" onclick="navigate('cafe-space')">${t.linkSpace} ${icon('arrowRight',14)}</a>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderCafeMenu(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>문의하기 | BizHub Mir</title>
+<meta name="description" content="카페 방문, 오피스 입주 상담, 골프 피팅 예약까지 한 번에 문의할 수 있습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`문의하기 | BizHub Mir`, en:`Contact | BizHub Mir` };
+
+T.ko.contact = {
+  pageEyebrow:`Contact`, pageTitle:`무엇이든 편하게 문의하세요`, pageDesc:`카페 방문, 오피스 입주 상담, 골프 피팅 예약까지 한 번에 문의할 수 있습니다.`,
+  formInterest:`관심 서비스`, int1:`카페 방문`, int2:`오피스 입주상담`, int3:`골프피팅 예약`, int4:`기타`,
+  formName:`이름`, formNamePh:`홍길동`,
+  formContact:`연락처`, formContactPh:`WhatsApp 번호 또는 이메일`,
+  formMessage:`메시지`, formMessagePh:`문의하실 내용을 입력해 주세요.`,
+  formSubmit:`문의 보내기`,
+  privacy:`수집된 개인정보(이름·연락처·문의내용)는 상담 목적으로만 사용되며 목적 달성 후 파기됩니다.`,
+  waTitle:`WhatsApp으로 바로 묻기`, waDesc:`가장 빠른 답변은 WhatsApp 문의입니다.`, waBtn:`WhatsApp 열기`,
+  addrLabel:`주소`, phoneLabel:`전화`, igLabel:`Instagram`,
+};
+T.en.contact = {
+  pageEyebrow:`Contact`, pageTitle:`Reach out, anytime`, pageDesc:`Ask about a café visit, office move-in, or a golf fitting reservation — all in one place.`,
+  formInterest:`Interested In`, int1:`Café visit`, int2:`Office move-in`, int3:`Golf fitting reservation`, int4:`Other`,
+  formName:`Name`, formNamePh:`Jane Doe`,
+  formContact:`Contact`, formContactPh:`WhatsApp number or email`,
+  formMessage:`Message`, formMessagePh:`Tell us what you need.`,
+  formSubmit:`Send Message`,
+  privacy:`Personal information collected (name, contact, message) is used solely for consultation purposes and discarded afterward.`,
+  waTitle:`Message us on WhatsApp`, waDesc:`WhatsApp gets you the fastest response.`, waBtn:`Open WhatsApp`,
+  addrLabel:`Address`, phoneLabel:`Phone`, igLabel:`Instagram`,
+};
+
+function renderContact(lang){ const t = T[lang].contact; return `
+${siteHeader('contact', lang)}
+${pageHero('contact','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    <div class="grid-2">
+      <div class="form-mock">
+        <div class="f-row"><label>${t.formInterest}</label>
+          <div class="f-chips">
+            <span class="f-chip sel">${icon('coffee',13)} ${t.int1}</span>
+            <span class="f-chip">${icon('briefcase',13)} ${t.int2}</span>
+            <span class="f-chip">${icon('target',13)} ${t.int3}</span>
+            <span class="f-chip">${t.int4}</span>
+          </div>
+        </div>
+        <div class="f-row"><label>${t.formName}</label><div class="f-fake">${t.formNamePh}</div></div>
+        <div class="f-row"><label>${t.formContact}</label><div class="f-fake">${t.formContactPh}</div></div>
+        <div class="f-row"><label>${t.formMessage}</label><div class="f-fake area">${t.formMessagePh}</div></div>
+        <button class="btn btn-navy btn-block">${icon('chat',16)} ${t.formSubmit}</button>
+        <p style="font-size:11px; color:var(--ink-faint); margin-top:12px;">${t.privacy}</p>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:16px;">
+          <h4>${icon('chat',16)} ${t.waTitle}</h4>
+          <p style="margin-bottom:14px;">${t.waDesc}</p>
+          <a class="btn btn-green btn-block">${t.waBtn}</a>
+        </div>
+        <div class="contact-row"><div class="ic">${icon('mapPin',16)}</div><div><b>${t.addrLabel}</b><span>Ruko Hollywood Boulevard, Cikarang Utara</span></div></div>
+        <div class="contact-row"><div class="ic">${icon('phone',16)}</div><div><b>${t.phoneLabel}</b><span>+62 8XX-XXXX-XXXX</span></div></div>
+        <div class="contact-row"><div class="ic">${icon('camera',16)}</div><div><b>${t.igLabel}</b><span>@bizcafe.id</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderContact(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>

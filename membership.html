@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>멤버십 | BizHub Mir</title>
+<meta name="description" content="1F·2F·3F를 함께 이용할수록 더 큰 혜택을 누릴 수 있습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`멤버십 | BizHub Mir`, en:`Membership | BizHub Mir` };
+
+T.ko.membership = {
+  pageEyebrow:`Membership`, pageTitle:`층을 넘나드는 혜택, 통합 멤버십`, pageDesc:`1F·2F·3F를 함께 이용할수록 더 큰 혜택을 누릴 수 있습니다.`,
+  crossEyebrow:`Cross Benefits`, crossTitle:`층간 교차 혜택`,
+  b1From:`2F 오피스 입주사`, b1To:`1F 카페 음료 · 베이커리`, b1Strong:`10% 할인`,
+  b2From:`3F 피팅 회원`, b2To:`1F 카페`, b2Strong:`음료 쿠폰 제공`,
+  cafeT:`1F 카페`, cafeD:`메뉴와 프로모션을 확인하세요.`,
+  officeT:`2F 오피스`, officeD:`입주 패키지를 확인하세요.`,
+  golfT:`3F 골프피팅`, golfD:`피팅 서비스를 확인하세요.`,
+};
+T.en.membership = {
+  pageEyebrow:`Membership`, pageTitle:`Benefits that cross every floor`, pageDesc:`The more floors you use together, the more you benefit.`,
+  crossEyebrow:`Cross Benefits`, crossTitle:`Cross-Floor Benefits`,
+  b1From:`2F Office Tenants`, b1To:`1F Café drinks & bakery`, b1Strong:`10% off`,
+  b2From:`3F Fitting Members`, b2To:`1F Café`, b2Strong:`free drink coupon`,
+  cafeT:`1F Café`, cafeD:`Check out the menu and promotions.`,
+  officeT:`2F Office`, officeD:`Check out the office packages.`,
+  golfT:`3F Golf Fitting`, golfD:`Check out the fitting service.`,
+};
+
+function renderMembership(lang){ const t = T[lang].membership; return `
+${siteHeader('membership', lang)}
+${pageHero('membership','gold', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.crossEyebrow)}
+    <h2 class="sec-h2">${t.crossTitle}</h2>
+    <div class="bench-diag" style="margin-top:22px;">
+      <div class="bench-row">
+        <div class="bench-from office">${t.b1From}</div>
+        <div class="bench-arrow">${icon('arrowRight',18)}</div>
+        <div class="bench-to">${t.b1To} <strong style="margin-left:6px;">${t.b1Strong}</strong></div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-from golf">${t.b2From}</div>
+        <div class="bench-arrow">${icon('arrowRight',18)}</div>
+        <div class="bench-to">${t.b2To} <strong style="margin-left:6px;">${t.b2Strong}</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="grid-3">
+      <a class="card" onclick="navigate('cafe-menu')"><h4>${icon('coffee',16)} &nbsp;${t.cafeT}</h4><p>${t.cafeD}</p></a>
+      <a class="card" onclick="navigate('office-guide')"><h4>${icon('briefcase',16)} &nbsp;${t.officeT}</h4><p>${t.officeD}</p></a>
+      <a class="card" onclick="navigate('golf-fitting')"><h4>${icon('target',16)} &nbsp;${t.golfT}</h4><p>${t.golfD}</p></a>
+    </div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderMembership(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>
