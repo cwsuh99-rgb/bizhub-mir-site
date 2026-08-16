@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Body Fitting | 3F 골프피팅 | BizHub Mir</title>
+<meta name="description" content="TPI(Titleist Performance Institute) 기반 Body Fitting으로 신체 가동성·안정성·파워를 정밀 진단하고, 스윙 결함의 근본 원인을 찾아냅니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`Body Fitting | 3F 골프피팅 | BizHub Mir`, en:`Body Fitting | 3F Golf Fitting | BizHub Mir` };
+
+T.ko.golfFittingBody = {
+  pageEyebrow:`3F 골프피팅 · Body Fitting`, pageTitle:`TPI 기반 신체 평가로 스윙의 물리적 기초를 진단합니다`,
+  pageDesc:`골프 스윙은 결국 관절과 근육이 만들어내는 동작입니다. Body-Swing Connection™ 철학으로 신체적 제약과 스윙 결함 사이의 간극을 데이터로 확인합니다.`,
+
+  introEyebrow:`About TPI Body Fitting`, introTitle:`TPI Body Fitting이란?`,
+  introDesc:`TPI Body Fitting은 골퍼의 신체 능력을 실제 스윙 메커닉스와 대조하여 매핑하는 종합적인 신체 평가입니다. Titleist Performance Institute가 개발한 이 스크리닝은 신체적인 제약과 스윙 결함 사이의 간극을 이어주는 Body-Swing Connection™ 철학을 바탕으로 합니다.`,
+
+  benEyebrow:`The Benefits`, benTitle:`얻을 수 있는 것`, benDesc:`TPI 공인 전문가와 함께 신체 스크린을 분석하면 다음과 같은 여러 가지 강력한 이점을 얻을 수 있습니다.`,
+  ben1t:`부상 예방 & 장기적인 골프 수명`, ben1d:`골프는 관절에 반복적이고 비대칭적인 스트레스를 줍니다. 만성 통증이나 급성 부상으로 이어지기 전에 강도·유연성이 부족한 부위를 미리 찾아냅니다.`,
+  ben2t:`맞춤형 경기력 향상`, ben2d:`일반적인 운동 루틴 대신 개인 스크린 결과에 맞춘 운동 프로그램을 받습니다. 약한 부위를 정확히 훈련해 골프 스윙 파워를 직접적으로 개선합니다.`,
+  ben3t:`파워와 비거리 증가`, ben3d:`비거리는 지면에서 골반·상체·팔·클럽으로 이어지는 효율적인 에너지 전달(Kinematic Sequence)에서 만들어집니다. 클럽헤드 스피드를 극대화할 신체 연결고리를 찾아냅니다.`,
+  ben4t:`효율적인 최적화`, ben4d:`프로의 "교과서적" 스윙을 좇는 대신, 당신만의 고유한 신체 구조에 최적화된 스윙 기술을 설계할 수 있습니다.`,
+
+  screenEyebrow:`1. Body Screen`, screenTitle:`TPI Body Screen이란?`,
+  screenDesc1:`TPI Physical Screen은 TPI 공인 전문가가 진행하는 16가지 구체적인 움직임 테스트로 구성된 종합 평가입니다. 신체의 가동성, 안정성, 균형, 파워를 평가합니다.`,
+  screenDesc2:`스크린의 목표는 특정 스윙 결함을 유발할 수 있는 신체적 제약을 찾아내는 것입니다. 볼 플라이트를 보는 대신, 스크린은 관절과 근육이 실제로 어떻게 작동하는지를 살펴봅니다.`,
+  compTitle:`핵심 구성 요소: 무엇을 측정하나요?`, compDesc:`16가지 테스트로 구성된 스크린은 효율적인 골프 스윙에 필요한 핵심 신체 요소들을 체계적으로 점검합니다.`,
+  scA_t:`A. 가동성과 유연성`, scA_d:`스윙의 관절이 올바른 골프 자세를 취하는 데 필요한 가동 범위를 갖고 있는지 확인합니다.`,
+  scA_li1:`골반 회전 & 상체 회전 — 상·하체 분리 능력을 테스트합니다. 이 분리가 토크를 만들고 올바른 kinematic sequence를 유지하는 열쇠입니다.`,
+  scA_li2:`90/90 테스트 — 백스윙·팔로우스루에서 클럽을 올바르게 세팅하는 데 필요한 어깨 가동성을 정밀 평가합니다.`,
+  scA_li3:`토우 터치 테스트 — 햄스트링 유연성과 허리 가동성을 평가해, 척추를 구부리지 않고 자세를 유지할 수 있는지 확인합니다.`,
+  scB_t:`B. 안정성과 균형`, scB_d:`골프는 안정된 기반을 유지하면서 빠른 속도로 회전해야 하는 운동입니다.`,
+  scB_li1:`한 발 균형(Single-Leg Balance) — 코어와 발목의 안정성을 측정합니다. 균형이 약하면 다운스윙 중 체중 이동이나 슬라이드가 발생합니다.`,
+  scB_li2:`오버헤드 딥 스쿼트 — 어깨·무릎·발목·척추의 대칭적 가동성과 안정성을 확인하는 기초 테스트입니다. 통과하지 못하면 흔히 "얼리 익스텐션"과 관련이 있습니다.`,
+  scC_t:`C. 손목과 전완 기능`, scC_d:`Wrist Hinge, 전완 회내/회외 등의 테스트로 클럽페이스를 컨트롤하고 임팩트 구간에서 클럽을 올바르게 릴리스하는 능력을 평가합니다.`,
+
+  kinEyebrow:`2. Kinematic Sequence`, kinTitle:`에너지 전달의 과학적 청사진`,
+  kinDesc:`TPI Kinematic Sequence는 신체에서 만들어진 에너지가 골프 클럽으로 효율적으로 전달되는 과학적 청사진입니다. 최소한의 노력으로 최대 클럽헤드 스피드를 만들기 위해 신체 각 부위가 가속·감속해야 하는 정확한 순서와 타이밍을 설명합니다.`,
+  kin1t:`골반(엉덩이) — 시작`, kin1d:`다운스윙은 지면에서부터 시작됩니다. 하체가 먼저 회전하며 지면을 밀어내는 힘으로 파워를 만듭니다. 골반이 최대 회전 속도에 도달하면 급격히 감속하며, 이 감속이 에너지를 다음 부위로 전달합니다.`,
+  kin2t:`상체(흉부/가슴) — 증폭`, kin2d:`상체는 골반에서 전달된 에너지를 받아 더 빠르게 가속하며 회전합니다. 이후 정점에서 감속하면서 합쳐진 에너지를 어깨와 팔로 전달합니다.`,
+  kin3t:`팔(과 손) — 전달`, kin3d:`팔은 상체 코어에서 만들어진 에너지를 받아 가슴을 가로질러 빠르게 가속합니다. 임팩트 직전 상체 회전과 함께 가속해 저장된 에너지를 손과 손목으로 그대로 방출합니다.`,
+  kin4t:`클럽헤드 — 채찍의 끝`, kin4d:`클럽헤드는 마지막 연결고리입니다. 앞선 부위들이 순서대로 효율적으로 가속·전달했기 때문에, 클럽헤드는 폭발적인 스피드로 정확한 임팩트 순간에 도달합니다.`,
+  kinPh:`Kinematic Sequence 그래프`,
+  speedTitle:`표준 속도`, speedCol1:`부위`, speedCol2:`표준 속도`,
+  sp1:`골반`, sp2:`상체`, sp3:`리드암`, sp4:`클럽`,
+
+  connEyebrow:`3. Body Connection`, connTitle:`Body-Swing Connection™`,
+  connDesc1:`TPI는 골프 클럽을 스윙하는 "정답"이 하나만 있다고 믿지 않습니다. 다만 모든 골퍼에게는 가장 효율적인 파워와 스윙 방식이 있으며, 이는 결국 그 사람의 신체가 물리적으로 할 수 있는 것에 의해 결정됩니다.`,
+  connDesc2:`엉덩이가 뻣뻣하거나, 코어가 약하거나, 척추가 굳어 있는 등 신체적 제약이 있다면, 몸은 무의식적으로 클럽을 볼로 되돌리기 위한 보상 동작을 만들어냅니다. Body-Swing Connection은 바로 이러한 보상 동작들을 연구합니다.`,
+  connA_t:`A. Joint-by-Joint 접근법`, connA_d:`신체 관절이 어떻게 연결되는지 이해하기 위해, TPI는 스트렝스 코치 Michael Boyle과 Gray Cook이 개발한 "Joint-by-Joint 접근법"을 활용합니다. 인체는 안정성 위주의 부위와 가동성 위주의 관절이 번갈아 쌓인 구조로 작동합니다.`,
+  connB_t:`B. 점 연결하기: 신체 결함에서 스윙 결함으로`, connB_d:`Body-Swing Connection을 통해 코치는 신체 스크린 데이터로 스윙 결함을 예측하거나, 반대로 스윙 영상에서 신체적 원인을 역추적할 수 있습니다.`,
+  connEx1:`오버헤드 스쿼트 & 얼리 익스텐션 — 좌우가 뻣뻣하고 코어가 약해 딥 오버헤드 스쿼트를 제대로 수행하지 못하면, 다운스윙 중 척추 각도를 유지할 수 없습니다. 흔히 엉덩이가 볼 쪽으로 밀리는 얼리 익스텐션이 발생해 블록이나 훅으로 이어집니다.`,
+  connEx2:`흉추 경직 & 캐스팅 — 등 중간 부위가 굳어 있으면 상체를 하체와 별개로 충분히 회전시킬 수 없습니다. 제대로 된 회전을 만들지 못해, 인위적인 스피드를 내려고 위에서부터 클럽을 던지듯 내리게 됩니다(캐스팅·스쿠핑).`,
+  connTypesTitle:`16가지 Body Connection 유형`,
+
+  ctaTitle:`Body Fitting 상담을 신청해 보세요`, ctaDesc:`TPI 공인 전문가가 신체 스크린부터 맞춤 처방까지 1:1로 안내해 드립니다.`, ctaBtn:`피팅 상담 신청`,
+  backLink:`← 피팅 서비스 전체 보기`,
+};
+T.en.golfFittingBody = {
+  pageEyebrow:`3F Golf Fitting · Body Fitting`, pageTitle:`A TPI-based physical assessment of your swing's physical foundation`,
+  pageDesc:`A golf swing is ultimately produced by joints and muscles. Using the Body-Swing Connection™ philosophy, we measure the gap between physical limitations and swing faults with real data.`,
+
+  introEyebrow:`About TPI Body Fitting`, introTitle:`What is TPI Body Fitting?`,
+  introDesc:`TPI Body Fitting is a comprehensive physical assessment that maps a golfer's physical capabilities against actual swing mechanics. Developed by the Titleist Performance Institute, this screening is built on the Body-Swing Connection™ philosophy, bridging the gap between physical limitations and swing faults.`,
+
+  benEyebrow:`The Benefits`, benTitle:`What You Gain`, benDesc:`Analyzing your physical screen with a TPI-certified expert unlocks several powerful benefits.`,
+  ben1t:`Injury Prevention & Golf Longevity`, ben1d:`Golf places repetitive, asymmetric stress on the joints. We identify weak or inflexible areas before they lead to chronic pain or acute injury.`,
+  ben2t:`Personalized Performance Gains`, ben2d:`Instead of a generic workout routine, you get a program tailored to your screen results — training the exact area holding back your swing.`,
+  ben3t:`More Power & Distance`, ben3d:`Distance comes from the efficient transfer of energy — the Kinematic Sequence — from the ground through pelvis, torso, arms, and club. We find the physical links that maximize clubhead speed.`,
+  ben4t:`Efficient Optimization`, ben4d:`Rather than chasing a "textbook" tour swing, TPI optimizes for your own unique body — so your coach can design technique that works in harmony with your structure.`,
+
+  screenEyebrow:`1. Body Screen`, screenTitle:`What is the TPI Body Screen?`,
+  screenDesc1:`The TPI Physical Screen is a comprehensive assessment made up of 16 specific movement tests conducted by a TPI-certified expert, evaluating mobility, stability, balance, and power.`,
+  screenDesc2:`The screen's goal is to find the physical limitations that could be causing specific swing faults. Instead of watching ball flight, the screen looks at how your joints and muscles actually work.`,
+  compTitle:`Core Components: What Gets Measured?`, compDesc:`The 16-test screen systematically checks the core physical elements required for an efficient golf swing.`,
+  scA_t:`A. Mobility & Flexibility`, scA_d:`Confirms whether the joints used in the swing have the range of motion needed for a proper golf posture.`,
+  scA_li1:`Pelvic & Torso Rotation — Tests the ability to separate the upper and lower body, the key to creating torque and maintaining proper kinematic sequence.`,
+  scA_li2:`90/90 Test — Precisely evaluates the shoulder mobility needed to set the club correctly in the backswing and follow-through.`,
+  scA_li3:`Toe Touch Test — Assesses hamstring flexibility and lumbar mobility to check whether posture can be maintained without rounding the spine.`,
+  scB_t:`B. Stability & Balance`, scB_d:`Golf requires rotating at speed while maintaining a stable base.`,
+  scB_li1:`Single-Leg Balance — Measures core and ankle stability. Poor balance leads to weight shift or sliding during the downswing.`,
+  scB_li2:`Overhead Deep Squat — A foundational test confirming symmetrical mobility and stability across shoulders, knees, ankles, and spine. Failing it is commonly linked to "early extension."`,
+  scC_t:`C. Wrist & Forearm Function`, scC_d:`Tests like wrist hinge and forearm pronation/supination assess the ability to control the clubface and release the club correctly through impact.`,
+
+  kinEyebrow:`2. Kinematic Sequence`, kinTitle:`The Scientific Blueprint for Energy Transfer`,
+  kinDesc:`The TPI Kinematic Sequence is the scientific blueprint for how energy generated in the body transfers efficiently into the golf club. It describes the exact order and timing in which each body segment must accelerate and decelerate to create maximum clubhead speed with minimal effort.`,
+  kin1t:`Pelvis (Hips) — Initiation`, kin1d:`The downswing starts from the ground up. The lower body rotates first, generating power by pushing against the ground. Once the pelvis hits peak rotational speed, it decelerates sharply — that deceleration transfers energy upward.`,
+  kin2t:`Torso (Chest) — Amplification`, kin2d:`The torso receives energy from the pelvis and rotates even faster. As it then peaks and decelerates, it passes the combined energy on to the shoulders and arms.`,
+  kin3t:`Arms (& Hands) — Delivery`, kin3d:`The arms take the energy generated by the core and accelerate rapidly across the chest. Just before impact, they accelerate with the torso's rotation, releasing all the stored energy into the hands and wrists.`,
+  kin4t:`Clubhead — The Tip of the Whip`, kin4d:`The clubhead is the last link. Because each prior segment accelerated and transferred efficiently in sequence, the clubhead achieves explosive speed right at the precise moment of impact.`,
+  kinPh:`Kinematic Sequence graph`,
+  speedTitle:`Standard Speeds`, speedCol1:`Segment`, speedCol2:`Standard Speed`,
+  sp1:`Pelvis`, sp2:`Torso`, sp3:`Lead Arm`, sp4:`Club`,
+
+  connEyebrow:`3. Body Connection`, connTitle:`Body-Swing Connection™`,
+  connDesc1:`TPI doesn't believe there's one single "correct" way to swing a golf club — there are countless ways. But every golfer has one most-efficient way to generate power and swing, and that is ultimately determined by what their body is physically able to do.`,
+  connDesc2:`When a physical limitation exists — stiff hips, a weak core, a rigid spine — the body unconsciously finds a compensation to get the club back to the ball. Body-Swing Connection is the study of exactly these compensations.`,
+  connA_t:`A. The Joint-by-Joint Approach`, connA_d:`To understand how the body's joints connect, TPI draws on the "Joint-by-Joint Approach" developed by strength coaches Michael Boyle and Gray Cook — the body works as an alternating stack of stability-focused segments and mobility-focused joints.`,
+  connB_t:`B. Connecting the Dots: From Physical Fault to Swing Fault`, connB_d:`With Body-Swing Connection, a coach can predict swing faults from physical screen data — or work backward from a swing fault to its physical root cause.`,
+  connEx1:`Overhead Squat & Early Extension — A golfer who can't perform a deep overhead squat due to stiff hips and a weak core can't maintain spine angle through the downswing. This commonly shows up as early extension — the hips thrusting toward the ball — leading to blocks or hooks.`,
+  connEx2:`Thoracic Stiffness & Casting — A golfer with a rigid mid-back can't rotate the torso independently of the lower body. Unable to generate proper rotational speed, they compensate by casting the club from the top to manufacture speed artificially (casting/scooping).`,
+  connTypesTitle:`16 Body Connection Types`,
+
+  ctaTitle:`Book a Body Fitting Consultation`, ctaDesc:`A TPI-certified expert will guide you 1:1, from the physical screen through your personalized program.`, ctaBtn:`Book a Fitting`,
+  backLink:`← View All Fitting Services`,
+};
+
+const BODY_CONNECTION_TYPES = [
+  'S-Posture','C-Posture','Loss of Posture','Flat Shoulder Plane','Flying Elbow',
+  'Early Extension','Over the Top','Sway','Slide','Late Buckle',
+  'Reverse Spine Angle','Forward Lunge','Hanging Back','Casting','Scooping','Chicken Winging',
+];
+
+function renderGolfFittingBody(lang){ const t = T[lang].golfFittingBody; return `
+${siteHeader('golf-fitting-body', lang)}
+${pageHero('golf-fitting-body','green', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    <a onclick="navigate('golf-fitting')" style="display:inline-flex; align-items:center; gap:6px; font-size:12.8px; font-weight:700; color:var(--ink-soft); cursor:pointer; margin-bottom:22px;">${t.backLink}</a>
+    ${eyebrow(t.introEyebrow)}
+    <h2 class="sec-h2">${t.introTitle}</h2>
+    <p class="sec-desc" style="max-width:760px;">${t.introDesc}</p>
+
+    ${eyebrow(t.benEyebrow)}
+    <h3 style="font-size:19px; font-weight:800; color:var(--ink); margin:0 0 8px;">${t.benTitle}</h3>
+    <p class="sec-desc">${t.benDesc}</p>
+    <div class="grid-4">
+      <div class="card icon-top"><div class="ic">${icon('shield',22)}</div><h4 style="font-size:14px;">${t.ben1t}</h4><p style="font-size:12.4px;">${t.ben1d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('target',22)}</div><h4 style="font-size:14px;">${t.ben2t}</h4><p style="font-size:12.4px;">${t.ben2d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('flag',22)}</div><h4 style="font-size:14px;">${t.ben3t}</h4><p style="font-size:12.4px;">${t.ben3d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('star',22)}</div><h4 style="font-size:14px;">${t.ben4t}</h4><p style="font-size:12.4px;">${t.ben4d}</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" style="background:var(--bg-soft); padding:44px 0;">
+  <div class="wrap">
+    ${eyebrow(t.screenEyebrow)}
+    <h2 class="sec-h2">${t.screenTitle}</h2>
+    <p class="sec-desc" style="max-width:760px; margin-bottom:14px;">${t.screenDesc1}</p>
+    <p class="sec-desc" style="max-width:760px;">${t.screenDesc2}</p>
+
+    <h3 style="font-size:16px; font-weight:800; color:var(--ink); margin:26px 0 6px;">${t.compTitle}</h3>
+    <p class="sec-desc">${t.compDesc}</p>
+    <div class="grid-3">
+      <div class="card">
+        <h4>${t.scA_t}</h4>
+        <p style="margin-bottom:12px;">${t.scA_d}</p>
+        <ul style="margin:0; padding-left:18px; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-size:12.2px; color:var(--ink-soft); line-height:1.7;">${t.scA_li1}</li>
+          <li style="font-size:12.2px; color:var(--ink-soft); line-height:1.7;">${t.scA_li2}</li>
+          <li style="font-size:12.2px; color:var(--ink-soft); line-height:1.7;">${t.scA_li3}</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>${t.scB_t}</h4>
+        <p style="margin-bottom:12px;">${t.scB_d}</p>
+        <ul style="margin:0; padding-left:18px; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-size:12.2px; color:var(--ink-soft); line-height:1.7;">${t.scB_li1}</li>
+          <li style="font-size:12.2px; color:var(--ink-soft); line-height:1.7;">${t.scB_li2}</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>${t.scC_t}</h4>
+        <p>${t.scC_d}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.kinEyebrow)}
+    <h2 class="sec-h2">${t.kinTitle}</h2>
+    <p class="sec-desc" style="max-width:760px;">${t.kinDesc}</p>
+    <div class="grid-2" style="align-items:start; gap:40px;">
+      <div>
+        <div class="step"><div class="num">1</div><div><b>${t.kin1t}</b><p>${t.kin1d}</p></div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="num">2</div><div><b>${t.kin2t}</b><p>${t.kin2d}</p></div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="num">3</div><div><b>${t.kin3t}</b><p>${t.kin3d}</p></div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="num">4</div><div><b>${t.kin4t}</b><p>${t.kin4d}</p></div></div>
+      </div>
+      <div>
+        ${ph(t.kinPh,'green')}
+        <h4 style="margin:22px 0 10px; font-size:14px; color:var(--ink);">${t.speedTitle}</h4>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>${t.speedCol1}</th><th>${t.speedCol2}</th></tr></thead>
+            <tbody>
+              <tr><td>${t.sp1}</td><td>500º/second</td></tr>
+              <tr><td>${t.sp2}</td><td>700º/second</td></tr>
+              <tr><td>${t.sp3}</td><td>1100º/second</td></tr>
+              <tr><td>${t.sp4}</td><td>2200º/second</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" style="background:var(--bg-soft); padding:44px 0;">
+  <div class="wrap">
+    ${eyebrow(t.connEyebrow)}
+    <h2 class="sec-h2">${t.connTitle}</h2>
+    <p class="sec-desc" style="max-width:760px; margin-bottom:14px;">${t.connDesc1}</p>
+    <p class="sec-desc" style="max-width:760px;">${t.connDesc2}</p>
+    <div class="grid-2">
+      <div class="card">
+        <h4>${t.connA_t}</h4>
+        <p>${t.connA_d}</p>
+      </div>
+      <div class="card">
+        <h4>${t.connB_t}</h4>
+        <p style="margin-bottom:12px;">${t.connB_d}</p>
+        <p style="font-size:12.2px; margin-bottom:8px;">${t.connEx1}</p>
+        <p style="font-size:12.2px;">${t.connEx2}</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:16px; font-weight:800; color:var(--ink); margin:28px 0 14px;">${t.connTypesTitle}</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:9px;">
+      ${BODY_CONNECTION_TYPES.map(name=>`<span class="trust-chip">${name}</span>`).join('')}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band" style="background:var(--green-soft); border-color:transparent;">
+      <div>
+        <h3 style="color:var(--green);">${t.ctaTitle}</h3>
+        <p>${t.ctaDesc}</p>
+      </div>
+      <a class="btn btn-green" onclick="navigate('contact')">${icon('chat',16)} ${t.ctaBtn}</a>
+    </div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderGolfFittingBody(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>
