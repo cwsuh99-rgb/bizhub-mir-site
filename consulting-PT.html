@@ -20,6 +20,7 @@ T.ko.consultingPT = {
   pageEyebrow:`2F 오피스 · 법인설립 서비스`, pageTitle:`PT. PMA 설립, 첫 요건부터 전체 절차까지 한 번에`,
   pageDesc:`외국인투자법인(PT. PMA, Perseroan Terbatas Penanaman Modal Asing) 설립에 필요한 핵심 요건, 구비 서류, 전체 절차와 노타리로부터 반드시 받아야 할 서류까지 정리했습니다.`,
   backLink:`← 창업 컨설팅으로 돌아가기`,
+  introText:`외부 컨설팅 기관에 문의하는 데 드는 비용과 시행착오에 대한 걱정이 많으실 겁니다. BizHub Mir는 상세한 설명과 믿을 수 있는 곳을 직접 소개해 드립니다. 사업가의 마음이 놓이는 지점까지 함께합니다.`,
 
   reqEyebrow:`1. Requirements`, reqTitle:`PT. PMA 설립 필수 요건`,
   reqDesc:`인도네시아에서 외국인 투자 법인을 설립하려면 아래 6가지 요건을 충족해야 합니다.`,
@@ -78,6 +79,7 @@ T.en.consultingPT = {
   pageEyebrow:`2F Office · Incorporation Service`, pageTitle:`Everything you need to set up a PT. PMA, from first requirement to final approval`,
   pageDesc:`A complete guide to the core requirements, required documents, full process, and the paperwork you must receive from your Notary when incorporating a PT. PMA (Perseroan Terbatas Penanaman Modal Asing).`,
   backLink:`← Back to Startup Consulting`,
+  introText:`Worrying about the cost and trial-and-error of reaching out to an outside consulting firm is natural. BizHub Mir gives you clear explanations and introduces you directly to providers you can trust — all the way to the point where you can breathe easy.`,
 
   reqEyebrow:`1. Requirements`, reqTitle:`Core Requirements to Incorporate a PT. PMA`,
   reqDesc:`Setting up a foreign-investment company in Indonesia means meeting these six requirements.`,
@@ -138,8 +140,13 @@ ${siteHeader('consulting-pt', lang)}
 ${pageHero('consulting-pt','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
 <section class="section">
   <div class="wrap">
-    <a onclick="navigate('office-consulting')" style="display:inline-flex; align-items:center; gap:6px; font-size:12.8px; font-weight:700; color:var(--ink-soft); cursor:pointer; margin-bottom:22px;">${t.backLink}</a>
+    <a onclick="navigate('office-consulting')" style="display:inline-flex; align-items:center; gap:6px; font-size:12.8px; font-weight:700; color:var(--ink-soft); cursor:pointer; margin-bottom:18px;">${t.backLink}</a>
+    <p class="sec-desc" style="margin-bottom:0;">${t.introText}</p>
+  </div>
+</section>
 
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
     ${eyebrow(t.reqEyebrow)}
     <h2 class="sec-h2">${t.reqTitle}</h2>
     <p class="sec-desc">${t.reqDesc}</p>
