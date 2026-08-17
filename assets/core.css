@@ -109,7 +109,7 @@ button{font-family:inherit; cursor:pointer; -webkit-appearance:none; appearance:
 
 /* ===== floor cards ===== */
 .floor-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-.floor-card{border:1px solid var(--line); border-radius:20px; padding:28px; background:#fff; transition:.18s;}
+.floor-card{border:1px solid var(--line); border-radius:20px; padding:28px; background:#fff; transition:.18s; cursor:pointer;}
 .floor-card:hover{box-shadow:var(--shadow-card); transform:translateY(-3px); border-color:transparent;}
 .floor-chip{width:46px; height:46px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:18px;}
 .floor-chip.cafe{background:var(--coffee-soft); color:var(--coffee);}
@@ -117,7 +117,7 @@ button{font-family:inherit; cursor:pointer; -webkit-appearance:none; appearance:
 .floor-chip.golf{background:var(--green-soft); color:var(--green);}
 .floor-card h3{font-size:18px; font-weight:800; margin:0 0 8px; color:var(--ink);}
 .floor-card p{font-size:13.3px; color:var(--ink-soft); margin:0 0 20px; line-height:1.75; min-height:66px;}
-.floor-link{font-size:13px; font-weight:700; display:inline-flex; align-items:center; gap:6px;}
+.floor-link{font-size:13px; font-weight:700; display:inline-flex; align-items:center; gap:6px; cursor:pointer;}
 .floor-link.cafe{color:var(--coffee);} .floor-link.office{color:var(--navy);} .floor-link.golf{color:var(--green);}
 
 /* ===== diff banner / cta band ===== */
@@ -163,8 +163,12 @@ button{font-family:inherit; cursor:pointer; -webkit-appearance:none; appearance:
 .card h4{margin:0 0 8px; font-size:14.6px; color:var(--ink); font-weight:800;}
 .card p{margin:0; font-size:12.8px; color:var(--ink-soft); line-height:1.7;}
 .card.icon-top .ic{margin-bottom:12px; color:var(--navy);}
-a.card{display:block; transition:.15s;}
-a.card:hover{box-shadow:var(--shadow-card); border-color:transparent;}
+a.card{display:block; transition:.18s; cursor:pointer;}
+a.card:hover{box-shadow:var(--shadow-card); transform:translateY(-3px); border-color:transparent;}
+
+/* clickable cards that navigate to a detail page: same hover lift as a.card/.floor-card, for cards not natively <a> tags */
+.card-clickable{cursor:pointer; transition:.18s;}
+.card-clickable:hover{box-shadow:var(--shadow-card); transform:translateY(-3px); border-color:transparent;}
 
 .box{background:#fff; border:1px solid var(--line); border-left:3px solid var(--navy); padding:20px 24px; border-radius:12px;}
 .box.green{border-left-color:var(--green);}

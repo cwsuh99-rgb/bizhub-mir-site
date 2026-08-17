@@ -112,23 +112,23 @@ ${siteHeader('home', lang)}
     <h2 class="sec-h2">${t.floorsTitle}</h2>
     <p class="sec-desc">${t.floorsDesc}</p>
     <div class="floor-grid">
-      <div class="floor-card">
+      <div class="floor-card" onclick="navigate('cafe-menu')">
         <div class="floor-chip cafe">${icon('coffee',22)}</div>
         <h3>${t.floor1t}</h3>
         <p>${t.floor1d}</p>
-        <a class="floor-link cafe" onclick="navigate('cafe-menu')">${t.floor1l} ${icon('arrowRight',14)}</a>
+        <a class="floor-link cafe">${t.floor1l} ${icon('arrowRight',14)}</a>
       </div>
-      <div class="floor-card">
+      <div class="floor-card" onclick="navigate('office-guide')">
         <div class="floor-chip office">${icon('briefcase',22)}</div>
         <h3>${t.floor2t}</h3>
         <p>${t.floor2d}</p>
-        <a class="floor-link office" onclick="navigate('office-guide')">${t.floor2l} ${icon('arrowRight',14)}</a>
+        <a class="floor-link office">${t.floor2l} ${icon('arrowRight',14)}</a>
       </div>
-      <div class="floor-card">
+      <div class="floor-card" onclick="navigate('golf-fitting')">
         <div class="floor-chip golf">${icon('target',22)}</div>
         <h3>${t.floor3t}</h3>
         <p>${t.floor3d}</p>
-        <a class="floor-link golf" onclick="navigate('golf-fitting')">${t.floor3l} ${icon('arrowRight',14)}</a>
+        <a class="floor-link golf">${t.floor3l} ${icon('arrowRight',14)}</a>
       </div>
     </div>
   </div>
