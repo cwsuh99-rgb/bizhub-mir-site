@@ -54,18 +54,18 @@ const NAV = [
 const CRUMB = {
   home:null, about:'bizhub', location:'bizhub', news:'bizhub',
   'cafe-menu':'cafe', 'cafe-space':'cafe',
-  'office-guide':'office', 'office-consulting':'office',
+  'office-guide':'office', 'office-consulting':'office', 'consulting-pt':'office',
   'golf-fitting':'golf', 'golf-business':'golf', 'golf-fitting-body':'golf',
   membership:null, contact:null
 };
 /* ---------- sub-pages one level below a NAV child (not shown in the menu, but should still highlight their parent group) ---------- */
-const SUBPAGE_TOP = { 'golf-fitting-body':'golf' };
+const SUBPAGE_TOP = { 'golf-fitting-body':'golf', 'consulting-pt':'office' };
 
 /* ---------- logical page key -> static file ---------- */
 const PAGE_URL = {
   home:'index.html', about:'about.html', location:'location.html', news:'news.html',
   'cafe-menu':'cafe-menu.html', 'cafe-space':'cafe-space.html',
-  'office-guide':'office-guide.html', 'office-consulting':'office-consulting.html',
+  'office-guide':'office-guide.html', 'office-consulting':'office-consulting.html', 'consulting-pt':'consulting-PT.html',
   'golf-fitting':'golf-fitting.html', 'golf-business':'golf-business.html', 'golf-fitting-body':'golf-fitting-body.html',
   membership:'membership.html', contact:'contact.html'
 };
@@ -75,12 +75,12 @@ function navigate(key){ window.location.href = PAGE_URL[key] || 'index.html'; }
 const T = { ko:{}, en:{} };
 T.ko.nav = { home:`Home`, bizhub:`BizHub`, about:`BizHub 소개`, location:`오시는 길`, news:`소식`,
   cafe:`1F 카페`, 'cafe-menu':`메뉴판`, 'cafe-space':`공간 & 인테리어`,
-  office:`2F 오피스`, 'office-guide':`오피스 안내`, 'office-consulting':`창업 컨설팅`,
+  office:`2F 오피스`, 'office-guide':`오피스 안내`, 'office-consulting':`창업 컨설팅`, 'consulting-pt':`법인설립 서비스`,
   golf:`3F 골프피팅`, 'golf-fitting':`피팅 서비스`, 'golf-business':`비즈니스 골프`, 'golf-fitting-body':`Body Fitting`,
   membership:`멤버십`, contact:`문의하기` };
 T.en.nav = { home:`Home`, bizhub:`BizHub`, about:`About BizHub`, location:`Location`, news:`News`,
   cafe:`1F Café`, 'cafe-menu':`Menu`, 'cafe-space':`Space & Interior`,
-  office:`2F Office`, 'office-guide':`Office Guide`, 'office-consulting':`Startup Consulting`,
+  office:`2F Office`, 'office-guide':`Office Guide`, 'office-consulting':`Startup Consulting`, 'consulting-pt':`Incorporation Service`,
   golf:`3F Golf Fitting`, 'golf-fitting':`Fitting Service`, 'golf-business':`Business Golf`, 'golf-fitting-body':`Body Fitting`,
   membership:`Membership`, contact:`Contact` };
 
