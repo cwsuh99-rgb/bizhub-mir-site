@@ -61,7 +61,6 @@ T.ko.golfFittingBody = {
   connEx2:`흉추 경직 & 캐스팅 — 등 중간 부위가 굳어 있으면 상체를 하체와 별개로 충분히 회전시킬 수 없습니다. 제대로 된 회전을 만들지 못해, 인위적인 스피드를 내려고 위에서부터 클럽을 던지듯 내리게 됩니다(캐스팅·스쿠핑).`,
   connTypesTitle:`16가지 Body Connection 유형`,
 
-  ctaTitle:`Body Fitting 상담을 신청해 보세요`, ctaDesc:`TPI 공인 전문가가 신체 스크린부터 맞춤 처방까지 1:1로 안내해 드립니다.`, ctaBtn:`피팅 상담 신청`,
   backLink:`← 피팅 서비스 전체 보기`,
 };
 T.en.golfFittingBody = {
@@ -109,7 +108,6 @@ T.en.golfFittingBody = {
   connEx2:`Thoracic Stiffness & Casting — A golfer with a rigid mid-back can't rotate the torso independently of the lower body. Unable to generate proper rotational speed, they compensate by casting the club from the top to manufacture speed artificially (casting/scooping).`,
   connTypesTitle:`16 Body Connection Types`,
 
-  ctaTitle:`Book a Body Fitting Consultation`, ctaDesc:`A TPI-certified expert will guide you 1:1, from the physical screen through your personalized program.`, ctaBtn:`Book a Fitting`,
   backLink:`← View All Fitting Services`,
 };
 
@@ -232,18 +230,6 @@ ${pageHero('golf-fitting-body','green', lang, t.pageEyebrow, t.pageTitle, t.page
     <h3 style="font-size:16px; font-weight:800; color:var(--ink); margin:28px 0 14px;">${t.connTypesTitle}</h3>
     <div style="display:flex; flex-wrap:wrap; gap:9px;">
       ${BODY_CONNECTION_TYPES.map(name=>`<span class="trust-chip">${name}</span>`).join('')}
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="cta-band" style="background:var(--green-soft); border-color:transparent;">
-      <div>
-        <h3 style="color:var(--green);">${t.ctaTitle}</h3>
-        <p>${t.ctaDesc}</p>
-      </div>
-      <a class="btn btn-green" onclick="navigate('contact')">${icon('chat',16)} ${t.ctaBtn}</a>
     </div>
   </div>
 </section>
