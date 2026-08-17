@@ -73,7 +73,6 @@ T.ko.consultingPT = {
   n4_li2:`노동부 사업장 신고증(WLKP) — 회사 설립 후 필수로 이행해야 하는 노동부 현황 신고로, 외국인 임직원 KITAS 신청 시 첨부 서류로도 쓰입니다.`,
 
   closingText:`처음이라 막막하게 느껴지실 수 있습니다. 가까이에서, 신뢰할 수 있는 파트너에게 하나씩 물어보시면 절차는 생각보다 어렵지 않습니다. BizHub Mir가 단계마다 직접 챙겨드립니다.`,
-  ctaTitle:`법인설립 상담을 신청해 보세요`, ctaDesc:`요건 검토부터 노타리·세무·OSS 등록까지 1:1로 안내해 드립니다.`, ctaBtn:`법인설립 상담 신청`,
 };
 T.en.consultingPT = {
   pageEyebrow:`2F Office · Incorporation Service`, pageTitle:`Everything you need to set up a PT. PMA, from first requirement to final approval`,
@@ -132,7 +131,6 @@ T.en.consultingPT = {
   n4_li2:`Manpower Registration Certificate (WLKP) — a mandatory labor-office filing after incorporation, also required as a supporting document when foreign staff apply for a KITAS.`,
 
   closingText:`It's natural to feel overwhelmed the first time. Working through it step by step with a trusted partner nearby makes the process far less daunting than it looks — BizHub Mir handles every stage with you, directly.`,
-  ctaTitle:`Book an Incorporation Consultation`, ctaDesc:`From requirement review to Notary, tax, and OSS registration, we'll guide you through it 1:1.`, ctaBtn:`Book a Consultation`,
 };
 
 function renderConsultingPT(lang){ const t = T[lang].consultingPT; return `
@@ -257,16 +255,9 @@ ${pageHero('consulting-pt','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
 
 <section class="section">
   <div class="wrap">
-    <div class="diff-banner" style="margin-bottom:22px;">
+    <div class="diff-banner">
       <div class="ic">${icon('chat',30)}</div>
       <div><p style="margin:0;">${t.closingText}</p></div>
-    </div>
-    <div class="cta-band">
-      <div>
-        <h3>${t.ctaTitle}</h3>
-        <p>${t.ctaDesc}</p>
-      </div>
-      <a class="btn btn-navy" onclick="navigate('contact')">${icon('chat',16)} ${t.ctaBtn}</a>
     </div>
   </div>
 </section>
