@@ -16,9 +16,13 @@
 <script>
 const DOC_TITLE = { ko:`오시는 길 | BizHub Mir`, en:`Location | BizHub Mir` };
 
+const BIZ_ADDRESS = `Ruko Hollywood Boulevard, Jl. Movie Land No.21 Blok A5B, Cikarang Utara, Jababeka, Bekasi, Indonesia`;
+const MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(BIZ_ADDRESS)}&output=embed`;
+const MAP_LINK_SRC = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BIZ_ADDRESS)}`;
+
 T.ko.location = {
   pageEyebrow:`BizHub · 오시는 길`, pageTitle:`자바베카 중심, 찾아오기 쉬운 위치`, pageDesc:`산업단지·대학·골프장이 모두 가까운 Ruko Hollywood Boulevard에 위치합니다.`,
-  mapPh:`Google Maps 임베드 영역`,
+  mapPh:`BizHub Mir 위치 지도`, mapOpenLink:`Google Maps에서 크게 보기`,
   addrLabel:`주소`, phoneLabel:`전화 / WhatsApp`, emailLabel:`이메일`, igLabel:`Instagram`,
   directionsBtn:`길찾기 문의하기`,
   hoursEyebrow:`Hours`, hoursTitle:`층별 영업시간`,
@@ -29,7 +33,7 @@ T.ko.location = {
 };
 T.en.location = {
   pageEyebrow:`BizHub · Location`, pageTitle:`In the heart of Jababeka, easy to find`, pageDesc:`Located on Ruko Hollywood Boulevard, close to the industrial estate, the university, and the golf course.`,
-  mapPh:`Google Maps embed area`,
+  mapPh:`BizHub Mir location map`, mapOpenLink:`Open in Google Maps`,
   addrLabel:`Address`, phoneLabel:`Phone / WhatsApp`, emailLabel:`Email`, igLabel:`Instagram`,
   directionsBtn:`Get Directions / Contact Us`,
   hoursEyebrow:`Hours`, hoursTitle:`Hours by Floor`,
@@ -45,7 +49,12 @@ ${pageHero('location','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
 <section class="section">
   <div class="wrap">
     <div class="grid-2">
-      <div class="map-ph" style="min-height:280px;">${icon('mapPin',30)}<span>${t.mapPh}</span></div>
+      <div>
+        <div class="map-embed">
+          <iframe src="${MAP_EMBED_SRC}" title="${t.mapPh}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <a href="${MAP_LINK_SRC}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; font-size:12.4px; font-weight:700; color:var(--navy); margin-top:10px;">${t.mapOpenLink} ${icon('arrowRight',13)}</a>
+      </div>
       <div>
         <div class="contact-row"><div class="ic">${icon('mapPin',16)}</div><div><b>${t.addrLabel}</b><span>Ruko Hollywood Boulevard, Jl. Movie Land No.21 Blok A5B, Cikarang Utara</span></div></div>
         <div class="contact-row"><div class="ic">${icon('phone',16)}</div><div><b>${t.phoneLabel}</b><span>+62 8XX-XXXX-XXXX</span></div></div>

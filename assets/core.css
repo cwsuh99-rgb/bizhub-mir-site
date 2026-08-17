@@ -169,6 +169,8 @@ a.card:hover{box-shadow:var(--shadow-card); border-color:transparent;}
 .photo-ph.navy{background:var(--navy-soft); color:#B06E52;}
 
 .map-ph{border:1px solid var(--line); border-radius:16px; background:repeating-linear-gradient(45deg,#F7F1E4,#F7F1E4 10px,#EFE4CD 10px,#EFE4CD 20px); min-height:220px; display:flex; align-items:center; justify-content:center; color:var(--ink-faint); flex-direction:column; gap:8px;}
+.map-embed{border:1px solid var(--line); border-radius:16px; overflow:hidden; min-height:280px;}
+.map-embed iframe{width:100%; height:100%; min-height:280px; display:block; border:0;}
 
 table{width:100%; border-collapse:collapse; font-size:13px;}
 thead th{background:var(--bg-soft); color:var(--ink); text-align:left; padding:10px 14px; font-size:12px; font-weight:800; border-radius:8px 8px 0 0;}
