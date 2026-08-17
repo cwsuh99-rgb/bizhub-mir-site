@@ -118,7 +118,7 @@ ${pageHero('golf-fitting','green', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)
   <div class="wrap">
     ${eyebrow(t.expertEyebrow)}
     <h2 class="sec-h2">${t.expertTitle}</h2>
-    <div class="grid-2" style="margin-top:22px; align-items:start;">
+    <div class="grid-2 expert-grid" style="margin-top:22px;">
       ${ph(t.expertPh,'green')}
       <div>
         <h3 style="font-size:16px; font-weight:800; color:var(--ink); margin:0 0 10px;">${t.expertName}</h3>
@@ -128,22 +128,22 @@ ${pageHero('golf-fitting','green', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)
       </div>
     </div>
     <div class="grid-4" style="margin-top:18px;">
-      <a class="cert-stat" href="assets/img/cert-body.png" target="_blank" rel="noopener noreferrer">
-        <img src="assets/img/cert-body.png" alt="${t.cert1t} — ${t.cert1sub}" loading="lazy">
+      <div class="cert-stat">
         <div class="cert-info"><b>${t.cert1t}</b><span>${t.cert1sub}</span></div>
-      </a>
-      <a class="cert-stat" href="assets/img/cert-swing.png" target="_blank" rel="noopener noreferrer">
-        <img src="assets/img/cert-swing.png" alt="${t.cert2t} — ${t.cert2sub}" loading="lazy">
+        <img src="assets/img/cert-body.png" alt="${t.cert1t} — ${t.cert1sub}" loading="lazy">
+      </div>
+      <div class="cert-stat">
         <div class="cert-info"><b>${t.cert2t}</b><span>${t.cert2sub}</span></div>
-      </a>
-      <a class="cert-stat" href="assets/img/cert-club.png" target="_blank" rel="noopener noreferrer">
-        <img src="assets/img/cert-club.png" alt="${t.cert3t} — ${t.cert3sub}" loading="lazy">
+        <img src="assets/img/cert-swing.png" alt="${t.cert2t} — ${t.cert2sub}" loading="lazy">
+      </div>
+      <div class="cert-stat">
         <div class="cert-info"><b>${t.cert3t}</b><span>${t.cert3sub}</span></div>
-      </a>
-      <a class="cert-stat" href="assets/img/cert-mental.png" target="_blank" rel="noopener noreferrer">
-        <img src="assets/img/cert-mental.png" alt="${t.cert4t} — ${t.cert4sub}" loading="lazy">
+        <img src="assets/img/cert-club.png" alt="${t.cert3t} — ${t.cert3sub}" loading="lazy">
+      </div>
+      <div class="cert-stat">
         <div class="cert-info"><b>${t.cert4t}</b><span>${t.cert4sub}</span></div>
-      </a>
+        <img src="assets/img/cert-mental.png" alt="${t.cert4t} — ${t.cert4sub}" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
