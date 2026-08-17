@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSS · Coretax 신고 서비스 | 2F 오피스 | BizHub Mir</title>
+<meta name="description" content="PT. PMA 설립 후 정기적으로 준수·신고해야 하는 세무(Coretax), 투자실현보고(LKPM), 노동부(WLKP·BPJS) 신고 항목과 준비 서류를 정리했습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/core.js"></script>
+<script>
+const DOC_TITLE = { ko:`OSS · Coretax 신고 서비스 | 2F 오피스 | BizHub Mir`, en:`OSS · Coretax Filing Service | 2F Office | BizHub Mir` };
+
+T.ko.consultingReport = {
+  pageEyebrow:`2F 오피스 · OSS · Coretax 신고 서비스`, pageTitle:`놓치면 위험한 정기 신고, 미리 챙겨드립니다`,
+  pageDesc:`PT. PMA 법인 설립 후 정기적으로 준수하고 신고해야 하는 주요 항목과 준비 서류 안내입니다. 사업을 아직 시작하지 않은 시점도 있지만, 그래도 신고할 것은 많습니다.`,
+  backLink:`← 창업 컨설팅으로 돌아가기`,
+  introText:`외부 컨설팅 기관에 문의하는 데 드는 비용과 시행착오에 대한 걱정이 많으실 겁니다. BizHub Mir는 상세한 설명과 믿을 수 있는 곳을 직접 소개해 드립니다. 사업가의 마음이 놓이는 지점까지 함께합니다.`,
+
+  taxEyebrow:`1. Tax Filing`, taxTitle:`세무 신고 (Coretax 시스템)`,
+  taxDesc:`인도네시아 정부의 통합 세무 시스템인 Coretax를 통해 매월 및 매년 신고를 진행해야 합니다.`,
+  tax1badge:`매월 15일~20일 마감`, tax1t:`원천징수세 (PPh 21/26, PPh 23/26, PPh 4(2))`,
+  tax1d:`임직원 급여 소득세(PPh 21), 서비스·용역료 원천세(PPh 23), 임차료 및 부동산 원천세(PPh 4(2))를 신고합니다.`,
+  tax1_li1:`급여 명세서(Pay-roll)`, tax1_li2:`거래처 인보이스`, tax1_li3:`원천징수 영수증(Bukti Potong)`, tax1_li4:`원천세 납부 영수증(BPN/NTPN)`,
+  tax2badge:`PKP(부가세 사업자) 등록 법인 대상`, tax2t:`부가가치세 (PPN)`,
+  tax2d:`매출 부가세(Pajak Keluaran)와 매입 부가세(Pajak Masukan)를 정산해 신고합니다.`,
+  tax2_li1:`세금계산서(e-Faktur) 발행/수령 내역`, tax2_li2:`재고 이체 확인서`,
+  tax3badge:`매월`, tax3t:`법인세 예납 (PPh Article 25)`,
+  tax3d:`전년도 법인세를 기준으로 산정된 월별 법인세를 분할 납부합니다.`,
+  tax3_li1:`월별 세금 납부 영수증`,
+  tax4badge:`회계연도 종료 후 4개월 이내 · 통상 4월 30일 마감`, tax4t:`연간 법인세 신고 (SPT Tahunan PPh Badan)`,
+  tax4d:`1년간의 총 수익과 세액을 정산해 법인세를 최종 신고합니다.`,
+  tax4_li1:`재무제표(손익계산서, 대차대조표)`, tax4_li2:`세무 감사보고서(자산·매출 규모에 따라 감사 의무 발생 시)`,
+  tax4_li3:`주주명부 및 이전가격 보고서(TP Doc — 계열사 간 거래가 있는 경우)`, tax4_li4:`월별 원천세·부가세 신고 내역 총괄표`,
+
+  lkpmEyebrow:`2. Investment Report`, lkpmTitle:`투자실현보고서 (LKPM · OSS RBA 시스템)`,
+  lkpmDesc:`인도네시아 투자부(BKPM) 규정에 따라 OSS(Online Single Submission) 시스템을 통해 투자 진행 상황을 정기적으로 보고해야 합니다.`,
+  lkpmWarn:`미제출 시 NIB(사업자 등록번호) 및 영업허가가 정지될 수 있습니다.`,
+  lkpmFreqT:`신고 주기 및 대상`, lkpmFreqD:`PT. PMA(외국인 투자 법인)는 분기별 1회 필수 신고 대상입니다. 신고 기간은 매 분기 종료 후 최소 1일~20일 사이(4월, 7월, 10월, 1월)입니다.`,
+  lkpmStageT:`보고 단계 구분`,
+  lkpm1t:`상업 이전 (Konstruksi / Belum Berproduksi Komersial)`, lkpm1d:`실제 매출이 발생하기 전, 공장·사무실 건설 및 설비·자본 투자 단계를 보고합니다.`,
+  lkpm2t:`상업 이전 후 (Berproduksi Komersial)`, lkpm2d:`실제 생산 및 매출이 발생한 후의 운영 현황을 보고합니다.`,
+  lkpmPrepT:`준비 사항`,
+  lkpm_li1:`OSS RBA 로그인 계정 (ID & Password)`,
+  lkpm_li2:`투자금 진행 내역 — 토지, 건물, 기계·장비, 기타 자본재 구매 증빙`,
+  lkpm_li3:`운영비 지출 내역 — 원자재 구매, 임차료, 기타 운영비`,
+  lkpm_li4:`인력 현황 — 현지인 직원 수 및 외국인 임직원(KITAS 보유자) 수`,
+  lkpm_li5:`생산 및 매출 실적 — (상업 이전 후) 제품·서비스 생산량 및 매출 실적 증빙`,
+  lkpm_li6:`상생 협력 실적 — 현지 중소기업(UMKM)과의 거래 내역 (해당 시)`,
+
+  laborEyebrow:`3. Labor Filing`, laborTitle:`노동부 정기 신고 (WLKP & BPJS)`,
+  laborDesc:`고용 현황과 4대 사회보장을 정기적으로 신고·납부해야 합니다.`,
+  wlkpBadge:`매년 1회 (또는 현황·인력 변경 시)`, wlkpT:`노동 현황 연례 신고 (WLKP)`,
+  wlkpD:`노동부 온라인 시스템(Kemnaker)을 통해, 법인 내 근로자 수(내국인/외국인), 임금 체계, 복리후생 현황을 보고합니다.`,
+  wlkp_li1:`근로계약서`, wlkp_li2:`조직도`, wlkp_li3:`취업규칙(PP - Peraturan Perusahaan)`, wlkp_li4:`직원 명단`,
+  bpjsBadge:`매월 10일~15일 마감`, bpjsT:`사회보장(BPJS) 정기 납부`,
+  bpjsD:`고용보험(산재·고용·연금 등) 및 건강보험료를 납부하고 인원 변동을 신고합니다.`,
+  bpjs_li1:`월별 급여 대장`, bpjs_li2:`신규 입사자·퇴사자 인적 사항(KTP, Paspor 등)`,
+
+  tableEyebrow:`Summary`, tableTitle:`신고 항목 요약표`,
+  th1:`구분`, th2:`신고 항목`, th3:`신고 주기`, th4:`담당 시스템/기관`, th5:`핵심 준비 사항`,
+  row1c1:`세무`, row1c2:`원천세/부가세 월간 신고`, row1c3:`매월`, row1c4:`Coretax`, row1c5:`e-Faktur, 급여대장, Bukti Potong`,
+  row2c1:`세무`, row2c2:`연간 법인세 (SPT)`, row2c3:`매년(4월)`, row2c4:`Coretax`, row2c5:`재무제표, 감사보고서, TP Doc`,
+  row3c1:`투자`, row3c2:`투자실현보고서 (LKPM)`, row3c3:`분기별`, row3c4:`OSS RBA`, row3c5:`자본투자 내역, 인력 현황, 매출 실적`,
+  row4c1:`노동`, row4c2:`노동 현황 신고 (WLKP)`, row4c3:`매년`, row4c4:`Kemnaker`, row4c5:`근로자 명부, 취업규칙, 조직도`,
+  row5c1:`노동`, row5c2:`사회보장보험 (BPJS)`, row5c3:`매월`, row5c4:`BPJS Portal`, row5c5:`급여 명세서, 입/퇴사자 내역`,
+
+  closingText:`사업을 시작하기 전이라도, 어떤 신고가 언제 다가오는지 미리 알고 있는 것만으로 훨씬 든든합니다. BizHub Mir가 일정과 서류를 함께 챙겨드립니다.`,
+  ctaTitle:`OSS · Coretax 신고 상담을 신청해 보세요`, ctaDesc:`세무·투자·노동 신고 일정과 준비 서류를 1:1로 점검해 드립니다.`, ctaBtn:`신고 상담 신청`,
+};
+T.en.consultingReport = {
+  pageEyebrow:`2F Office · OSS · Coretax Filing Service`, pageTitle:`We help you stay ahead of the filings that carry real risk if missed`,
+  pageDesc:`A guide to the key items and documents you must regularly comply with and file after incorporating a PT. PMA. Even before your business is fully up and running, there's still plenty to file.`,
+  backLink:`← Back to Startup Consulting`,
+  introText:`Worrying about the cost and trial-and-error of reaching out to an outside consulting firm is natural. BizHub Mir gives you clear explanations and introduces you directly to providers you can trust — all the way to the point where you can breathe easy.`,
+
+  taxEyebrow:`1. Tax Filing`, taxTitle:`Tax Filing (Coretax System)`,
+  taxDesc:`Monthly and annual filings must be submitted through Coretax, Indonesia's integrated tax system.`,
+  tax1badge:`Due the 15th–20th of every month`, tax1t:`Withholding Taxes (PPh 21/26, PPh 23/26, PPh 4(2))`,
+  tax1d:`Covers payroll income tax (PPh 21), withholding on services/royalties (PPh 23), and withholding on rent/real estate (PPh 4(2)).`,
+  tax1_li1:`Payroll records`, tax1_li2:`Vendor invoices`, tax1_li3:`Withholding slips (Bukti Potong)`, tax1_li4:`Withholding-tax payment receipts (BPN/NTPN)`,
+  tax2badge:`For companies registered as PKP (VAT taxpayer)`, tax2t:`Value Added Tax (PPN)`,
+  tax2d:`Reconciles and files output VAT (Pajak Keluaran) against input VAT (Pajak Masukan).`,
+  tax2_li1:`e-Faktur (tax invoice) issued/received records`, tax2_li2:`Inventory transfer confirmations`,
+  tax3badge:`Monthly`, tax3t:`Corporate Tax Installment (PPh Article 25)`,
+  tax3d:`Pays monthly installments of corporate tax, calculated based on the prior year's tax liability.`,
+  tax3_li1:`Monthly tax payment receipts`,
+  tax4badge:`Within 4 months of fiscal year-end · typically due April 30`, tax4t:`Annual Corporate Tax Return (SPT Tahunan PPh Badan)`,
+  tax4d:`Reconciles a full year's revenue and tax to file the final corporate tax return.`,
+  tax4_li1:`Financial statements (income statement, balance sheet)`, tax4_li2:`Tax audit report (if audit is required based on asset/revenue size)`,
+  tax4_li3:`Shareholder register and transfer-pricing documentation (TP Doc — if transacting with affiliates)`, tax4_li4:`Summary of monthly withholding/VAT filings`,
+
+  lkpmEyebrow:`2. Investment Report`, lkpmTitle:`Investment Activity Report (LKPM · OSS RBA System)`,
+  lkpmDesc:`Under BKPM (Ministry of Investment) regulations, you must regularly report investment progress through the OSS (Online Single Submission) system.`,
+  lkpmWarn:`Failure to file can result in your NIB (business ID number) and operating license being suspended.`,
+  lkpmFreqT:`Filing Frequency & Who Must File`, lkpmFreqD:`PT. PMA (foreign-investment companies) must file every quarter. The filing window runs from day 1 to day 20 after each quarter ends (April, July, October, January).`,
+  lkpmStageT:`Reporting Stages`,
+  lkpm1t:`Pre-Commercial (Konstruksi / Belum Berproduksi Komersial)`, lkpm1d:`Before revenue begins — reports on factory/office construction and equipment/capital investment.`,
+  lkpm2t:`Post-Commercial (Berproduksi Komersial)`, lkpm2d:`Reports on operating status once actual production and sales have begun.`,
+  lkpmPrepT:`What to Prepare`,
+  lkpm_li1:`OSS RBA login credentials (ID & password)`,
+  lkpm_li2:`Investment progress records — proof of land, building, machinery/equipment, and other capital-goods purchases`,
+  lkpm_li3:`Operating expense records — raw material purchases, rent, and other operating costs`,
+  lkpm_li4:`Workforce status — number of local staff and foreign staff (KITAS holders)`,
+  lkpm_li5:`Production & sales figures — (post-commercial) proof of product/service output and sales`,
+  lkpm_li6:`Local partnership results — transactions with local SMEs (UMKM), if applicable`,
+
+  laborEyebrow:`3. Labor Filing`, laborTitle:`Manpower Ministry Filings (WLKP & BPJS)`,
+  laborDesc:`Employment status and mandatory social security must be filed and paid regularly.`,
+  wlkpBadge:`Once a year (or whenever headcount/status changes)`, wlkpT:`Annual Manpower Report (WLKP)`,
+  wlkpD:`Filed through the Ministry of Manpower's online system (Kemnaker), reporting headcount (local/foreign), wage structure, and benefits.`,
+  wlkp_li1:`Employment contracts`, wlkp_li2:`Org chart`, wlkp_li3:`Company regulations (PP - Peraturan Perusahaan)`, wlkp_li4:`Employee roster`,
+  bpjsBadge:`Due the 10th–15th of every month`, bpjsT:`Social Security (BPJS) Payments`,
+  bpjsD:`Pays employment insurance (work accident, employment, pension, etc.) and health insurance premiums, and reports headcount changes.`,
+  bpjs_li1:`Monthly payroll ledger`, bpjs_li2:`New hires'/departures' ID details (KTP, passport, etc.)`,
+
+  tableEyebrow:`Summary`, tableTitle:`Filing Checklist at a Glance`,
+  th1:`Category`, th2:`Filing`, th3:`Frequency`, th4:`System/Authority`, th5:`Key Documents`,
+  row1c1:`Tax`, row1c2:`Monthly withholding/VAT filing`, row1c3:`Monthly`, row1c4:`Coretax`, row1c5:`e-Faktur, payroll ledger, Bukti Potong`,
+  row2c1:`Tax`, row2c2:`Annual corporate tax (SPT)`, row2c3:`Annually (April)`, row2c4:`Coretax`, row2c5:`Financial statements, audit report, TP Doc`,
+  row3c1:`Investment`, row3c2:`Investment Activity Report (LKPM)`, row3c3:`Quarterly`, row3c4:`OSS RBA`, row3c5:`Capital investment records, workforce status, sales figures`,
+  row4c1:`Labor`, row4c2:`Manpower report (WLKP)`, row4c3:`Annually`, row4c4:`Kemnaker`, row4c5:`Employee roster, company regulations, org chart`,
+  row5c1:`Labor`, row5c2:`Social security (BPJS)`, row5c3:`Monthly`, row5c4:`BPJS Portal`, row5c5:`Payroll ledger, new hire/departure records`,
+
+  closingText:`Even before you're fully operational, simply knowing what's due and when makes a real difference. BizHub Mir tracks the calendar and the paperwork with you.`,
+  ctaTitle:`Book an OSS · Coretax Filing Consultation`, ctaDesc:`We'll review your tax, investment, and labor filing calendar and required documents with you, 1:1.`, ctaBtn:`Book a Consultation`,
+};
+
+function renderConsultingReport(lang){ const t = T[lang].consultingReport; return `
+${siteHeader('consulting-report', lang)}
+${pageHero('consulting-report','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
+<section class="section">
+  <div class="wrap">
+    <a onclick="navigate('office-consulting')" style="display:inline-flex; align-items:center; gap:6px; font-size:12.8px; font-weight:700; color:var(--ink-soft); cursor:pointer; margin-bottom:18px;">${t.backLink}</a>
+    <p class="sec-desc" style="margin-bottom:0;">${t.introText}</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    ${eyebrow(t.taxEyebrow)}
+    <h2 class="sec-h2">${t.taxTitle}</h2>
+    <p class="sec-desc">${t.taxDesc}</p>
+    <div class="grid-2">
+      <div class="card">
+        <span class="badge-pill navy"><span class="dot"></span>${t.tax1badge}</span>
+        <h4 style="margin-top:12px;">${t.tax1t}</h4>
+        <p>${t.tax1d}</p>
+        <ul style="margin:10px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax1_li1}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax1_li2}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax1_li3}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax1_li4}</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge-pill gold"><span class="dot"></span>${t.tax2badge}</span>
+        <h4 style="margin-top:12px;">${t.tax2t}</h4>
+        <p>${t.tax2d}</p>
+        <ul style="margin:10px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax2_li1}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax2_li2}</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge-pill coffee"><span class="dot"></span>${t.tax3badge}</span>
+        <h4 style="margin-top:12px;">${t.tax3t}</h4>
+        <p>${t.tax3d}</p>
+        <ul style="margin:10px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax3_li1}</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge-pill navy"><span class="dot"></span>${t.tax4badge}</span>
+        <h4 style="margin-top:12px;">${t.tax4t}</h4>
+        <p>${t.tax4d}</p>
+        <ul style="margin:10px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax4_li1}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax4_li2}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax4_li3}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.tax4_li4}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" style="background:var(--bg-soft); padding:44px 0;">
+  <div class="wrap">
+    ${eyebrow(t.lkpmEyebrow)}
+    <h2 class="sec-h2">${t.lkpmTitle}</h2>
+    <p class="sec-desc" style="margin-bottom:16px;">${t.lkpmDesc}</p>
+    <div class="box" style="border-left-color:var(--gold-ink); margin-bottom:26px;">
+      <p style="margin:0; font-size:13px; color:var(--ink);">${icon('shield',14)} ${t.lkpmWarn}</p>
+    </div>
+
+    <h3 style="font-size:16px; font-weight:800; color:var(--ink); margin:0 0 8px;">${t.lkpmFreqT}</h3>
+    <p class="sec-desc" style="margin-bottom:20px;">${t.lkpmFreqD}</p>
+
+    <h3 style="font-size:16px; font-weight:800; color:var(--ink); margin:0 0 12px;">${t.lkpmStageT}</h3>
+    <div class="grid-2" style="margin-bottom:26px;">
+      <div class="card"><h4>${t.lkpm1t}</h4><p>${t.lkpm1d}</p></div>
+      <div class="card"><h4>${t.lkpm2t}</h4><p>${t.lkpm2d}</p></div>
+    </div>
+
+    <h3 style="font-size:16px; font-weight:800; color:var(--ink); margin:0 0 12px;">${t.lkpmPrepT}</h3>
+    <ul style="margin:0; padding-left:18px; display:flex; flex-direction:column; gap:8px; max-width:760px;">
+      <li style="font-size:12.6px; color:var(--ink-soft); line-height:1.7;">${t.lkpm_li1}</li>
+      <li style="font-size:12.6px; color:var(--ink-soft); line-height:1.7;">${t.lkpm_li2}</li>
+      <li style="font-size:12.6px; color:var(--ink-soft); line-height:1.7;">${t.lkpm_li3}</li>
+      <li style="font-size:12.6px; color:var(--ink-soft); line-height:1.7;">${t.lkpm_li4}</li>
+      <li style="font-size:12.6px; color:var(--ink-soft); line-height:1.7;">${t.lkpm_li5}</li>
+      <li style="font-size:12.6px; color:var(--ink-soft); line-height:1.7;">${t.lkpm_li6}</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    ${eyebrow(t.laborEyebrow)}
+    <h2 class="sec-h2">${t.laborTitle}</h2>
+    <p class="sec-desc">${t.laborDesc}</p>
+    <div class="grid-2">
+      <div class="card">
+        <span class="badge-pill green"><span class="dot"></span>${t.wlkpBadge}</span>
+        <h4 style="margin-top:12px;">${t.wlkpT}</h4>
+        <p>${t.wlkpD}</p>
+        <ul style="margin:10px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.wlkp_li1}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.wlkp_li2}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.wlkp_li3}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.wlkp_li4}</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge-pill green"><span class="dot"></span>${t.bpjsBadge}</span>
+        <h4 style="margin-top:12px;">${t.bpjsT}</h4>
+        <p>${t.bpjsD}</p>
+        <ul style="margin:10px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.bpjs_li1}</li>
+          <li style="font-size:12px; color:var(--ink-soft); line-height:1.7;">${t.bpjs_li2}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" style="background:var(--bg-soft); padding:44px 0;">
+  <div class="wrap">
+    ${eyebrow(t.tableEyebrow)}
+    <h2 class="sec-h2">${t.tableTitle}</h2>
+    <div class="table-scroll" style="margin-top:10px;"><table>
+      <thead><tr><th>${t.th1}</th><th>${t.th2}</th><th>${t.th3}</th><th>${t.th4}</th><th>${t.th5}</th></tr></thead>
+      <tbody>
+        <tr><td>${t.row1c1}</td><td>${t.row1c2}</td><td>${t.row1c3}</td><td>${t.row1c4}</td><td>${t.row1c5}</td></tr>
+        <tr><td>${t.row2c1}</td><td>${t.row2c2}</td><td>${t.row2c3}</td><td>${t.row2c4}</td><td>${t.row2c5}</td></tr>
+        <tr><td>${t.row3c1}</td><td>${t.row3c2}</td><td>${t.row3c3}</td><td>${t.row3c4}</td><td>${t.row3c5}</td></tr>
+        <tr><td>${t.row4c1}</td><td>${t.row4c2}</td><td>${t.row4c3}</td><td>${t.row4c4}</td><td>${t.row4c5}</td></tr>
+        <tr><td>${t.row5c1}</td><td>${t.row5c2}</td><td>${t.row5c3}</td><td>${t.row5c4}</td><td>${t.row5c5}</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="diff-banner" style="margin-bottom:22px;">
+      <div class="ic">${icon('chat',30)}</div>
+      <div><p style="margin:0;">${t.closingText}</p></div>
+    </div>
+    <div class="cta-band">
+      <div>
+        <h3>${t.ctaTitle}</h3>
+        <p>${t.ctaDesc}</p>
+      </div>
+      <a class="btn btn-navy" onclick="navigate('contact')">${icon('chat',16)} ${t.ctaBtn}</a>
+    </div>
+  </div>
+</section>
+${siteFooter(lang)}`; }
+
+function renderCurrentPage(){
+  document.documentElement.lang = currentLang;
+  document.title = DOC_TITLE[currentLang] || DOC_TITLE.en;
+  app.innerHTML = renderConsultingReport(currentLang) + fab(currentLang);
+  window.scrollTo(0,0);
+}
+renderCurrentPage();
+</script>
+</body>
+</html>
