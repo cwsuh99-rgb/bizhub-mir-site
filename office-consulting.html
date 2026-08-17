@@ -19,14 +19,14 @@ const DOC_TITLE = { ko:`창업 컨설팅 | 2F 오피스 | BizHub Mir`, en:`Start
 T.ko.officeConsulting = {
   pageEyebrow:`2F 오피스 · 창업 컨설팅`, pageTitle:`낯선 제도, 혼자 부딪히지 않아도 됩니다`, pageDesc:`인도네시아 진출 초기 겪는 법인 설립·행정 절차의 어려움을 현지 신뢰 네트워크로 해결합니다.`,
   servicesEyebrow:`Foreign Services`, servicesTitle:`외국인 창업자 전용 서비스`,
-  s1t:`법인 주소지 제공`, s1d:`SLF·HO를 포함한 신뢰 가능한 법인 등록 주소를 제공합니다.`,
-  s2t:`Notary 연계`, s2d:`검증된 현지 Notary와 연계해 법인 설립 절차를 안전하게 진행합니다.`,
-  s3t:`OSS · Coretax 신고 컨설팅`, s3d:`정기 신고·행정 절차를 정확한 일정에 맞춰 지원합니다.`,
+  s1t:`법인설립 서비스`, s1d:`SLF·HO를 포함한 법인 등록 주소 제공부터 정관 작성, 인허가 신청까지 PT PMA 설립 전 과정을 지원합니다.`,
+  s2t:`OSS · Coretax 신고 서비스`, s2d:`OSS 시스템 인허가 신청부터 Coretax 세무 신고까지, 정기 신고·행정 절차를 정확한 일정에 맞춰 지원합니다.`,
+  s3t:`법무, 노무, 노타리 연계`, s3d:`검증된 현지 법무법인·노무사·Notary와 연계해 설립부터 운영까지 안전하게 지원합니다.`,
   benefitTitle:`입주사 전용 혜택`, benefitDesc:`2F 오피스 입주사는 1F 카페 10% 할인, 3F 골프피팅 할인 등 통합 멤버십 혜택을 받습니다.`, benefitLink:`멤버십 자세히 보기 →`,
   consultEyebrow:`Consultation`, consultTitle:`창업 상담 신청`,
   formCompany:`회사명 / 예정 회사명`, formCompanyPh:`예: PT. Sample Indonesia`,
   formStage:`설립 단계`, stage1:`검토 중`, stage2:`설립 진행중`, stage3:`설립 완료`,
-  formServices:`필요 서비스`, svc1:`법인 주소지`, svc2:`Notary 연계`, svc3:`OSS/Coretax 신고`,
+  formServices:`필요 서비스`, svc1:`법인설립 서비스`, svc2:`OSS/Coretax 신고 서비스`, svc3:`법무·노무·노타리 연계`,
   formContact:`연락처`, formContactPh:`WhatsApp 번호 또는 이메일`,
   formSubmit:`창업 상담 신청하기`,
   sideText:`인니 문화·제도에 대한 지식과 경험이 부족해도 괜찮습니다. BizHub Mir는 인프라가 갖춰진 공간에서 준비된 파트너와 함께 시작할 수 있도록 돕습니다.`,
@@ -35,14 +35,14 @@ T.ko.officeConsulting = {
 T.en.officeConsulting = {
   pageEyebrow:`2F Office · Startup Consulting`, pageTitle:`You don't have to navigate unfamiliar regulations alone`, pageDesc:`We solve the company-registration and administrative hurdles of entering Indonesia through a trusted local network.`,
   servicesEyebrow:`Foreign Services`, servicesTitle:`Services for Foreign Founders`,
-  s1t:`Registered Company Address`, s1d:`A trusted registered business address, including SLF and HO.`,
-  s2t:`Notary Referral`, s2d:`Connects you with a vetted local Notary for a safe incorporation process.`,
-  s3t:`OSS · Coretax Filing Consulting`, s3d:`Supports periodic filings and administrative procedures on schedule.`,
+  s1t:`Incorporation Service`, s1d:`From a registered business address (incl. SLF & HO) to drafting the deed of incorporation and licensing applications, we support the entire PT PMA setup process.`,
+  s2t:`OSS · Coretax Filing Service`, s2d:`From OSS licensing applications to Coretax tax filings, we keep every periodic submission on schedule.`,
+  s3t:`Legal, HR & Notary Referral`, s3d:`Connects you with vetted local law firms, HR/labor consultants, and Notaries for safe setup and ongoing operations.`,
   benefitTitle:`Tenant-Only Benefits`, benefitDesc:`2F office tenants get 10% off at 1F Café, discounts on 3F Golf Fitting, and more through the integrated membership.`, benefitLink:`See membership details →`,
   consultEyebrow:`Consultation`, consultTitle:`Request a Startup Consultation`,
   formCompany:`Company Name / Planned Name`, formCompanyPh:`e.g. PT. Sample Indonesia`,
   formStage:`Registration Stage`, stage1:`Considering`, stage2:`In Progress`, stage3:`Registered`,
-  formServices:`Services Needed`, svc1:`Registered Address`, svc2:`Notary Referral`, svc3:`OSS/Coretax Filing`,
+  formServices:`Services Needed`, svc1:`Incorporation Service`, svc2:`OSS/Coretax Filing`, svc3:`Legal/HR/Notary Referral`,
   formContact:`Contact`, formContactPh:`WhatsApp number or email`,
   formSubmit:`Request Consultation`,
   sideText:`It's okay if you're new to Indonesian culture and regulations. BizHub Mir helps you get started with a ready-made space and a prepared partner.`,
@@ -58,8 +58,8 @@ ${pageHero('office-consulting','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)
     <h2 class="sec-h2">${t.servicesTitle}</h2>
     <div class="grid-3" style="margin-top:22px;">
       <div class="card icon-top"><div class="ic">${icon('building',24)}</div><h4>${t.s1t}</h4><p>${t.s1d}</p></div>
-      <div class="card icon-top"><div class="ic">${icon('shield',24)}</div><h4>${t.s2t}</h4><p>${t.s2d}</p></div>
-      <div class="card icon-top"><div class="ic">${icon('clock',24)}</div><h4>${t.s3t}</h4><p>${t.s3d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('clock',24)}</div><h4>${t.s2t}</h4><p>${t.s2d}</p></div>
+      <div class="card icon-top"><div class="ic">${icon('shield',24)}</div><h4>${t.s3t}</h4><p>${t.s3d}</p></div>
     </div>
   </div>
 </section>
