@@ -24,6 +24,7 @@ T.ko.golfFitting = {
   pil1t:`Body Fitting`, pil1sub:`TPI 기반`, pil1d:`신체 밸런스와 가동범위를 진단해 스윙에 맞는 몸의 조건을 만듭니다.`,
   pil2t:`Club Fitting`, pil2sub:`KGFA(대한골프피팅협회) 기준`, pil2d:`샤프트 · 헤드 · 라이각 등 클럽 스펙을 개인 스윙에 맞춰 조정합니다.`,
   pil3t:`Swing Fitting`, pil3sub:`Foresight Sports PEAK 프로그램`, pil3d:`정밀 데이터 분석으로 스윙 궤적과 임팩트를 진단하고 개선 방향을 제안합니다.`,
+  pilDetailLink:`상세설명 보기`,
 
   processEyebrow:`Process`, processTitle:`피팅 프로세스`,
   s1t:`진단`, s1d:`바디 밸런스와 스윙 궤적을 정밀 분석 장비로 측정합니다.`,
@@ -51,6 +52,7 @@ T.en.golfFitting = {
   pil1t:`Body Fitting`, pil1sub:`TPI-Based`, pil1d:`Diagnoses body balance and range of motion to build the physical foundation for your swing.`,
   pil2t:`Club Fitting`, pil2sub:`KGFA (Korea Golf Fitting Association) Standard`, pil2d:`Adjusts club specs — shaft, head, lie angle, and more — to match your individual swing.`,
   pil3t:`Swing Fitting`, pil3sub:`Foresight Sports PEAK Program`, pil3d:`Diagnoses swing path and impact through precision data and proposes an improvement direction.`,
+  pilDetailLink:`View Details`,
 
   processEyebrow:`Process`, processTitle:`The Fitting Process`,
   s1t:`Diagnose`, s1d:`Measure body balance and swing path with precision analysis equipment.`,
@@ -85,18 +87,21 @@ ${pageHero('golf-fitting','green', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)
         <h4>${t.pil1t}</h4>
         <span class="badge green" style="margin-bottom:10px;">${t.pil1sub}</span>
         <p>${t.pil1d}</p>
+        <span class="floor-link golf" style="margin-top:14px;">${t.pilDetailLink} ${icon('arrowRight',13)}</span>
       </div>
       <div class="card icon-top card-clickable" onclick="navigate('golf-fitting-club')">
         <div class="ic">${icon('briefcase',24)}</div>
         <h4>${t.pil2t}</h4>
         <span class="badge green" style="margin-bottom:10px;">${t.pil2sub}</span>
         <p>${t.pil2d}</p>
+        <span class="floor-link golf" style="margin-top:14px;">${t.pilDetailLink} ${icon('arrowRight',13)}</span>
       </div>
       <div class="card icon-top card-clickable" onclick="navigate('golf-fitting-swing')">
         <div class="ic">${icon('target',24)}</div>
         <h4>${t.pil3t}</h4>
         <span class="badge green" style="margin-bottom:10px;">${t.pil3sub}</span>
         <p>${t.pil3d}</p>
+        <span class="floor-link golf" style="margin-top:14px;">${t.pilDetailLink} ${icon('arrowRight',13)}</span>
       </div>
     </div>
   </div>
