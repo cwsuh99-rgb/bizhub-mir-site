@@ -17,19 +17,21 @@
 const DOC_TITLE = { ko:`멤버십 | BizHub Mir`, en:`Membership | BizHub Mir` };
 
 T.ko.membership = {
-  pageEyebrow:`Membership`, pageTitle:`층을 넘나드는 혜택, 통합 멤버십`, pageDesc:`1F·2F·3F를 함께 이용할수록 더 큰 혜택을 누릴 수 있습니다.`,
-  crossEyebrow:`Cross Benefits`, crossTitle:`층간 교차 혜택`,
-  b1From:`2F 오피스 입주사`, b1To:`1F 카페 음료 · 베이커리`, b1Strong:`10% 할인`,
-  b2From:`3F 피팅 회원`, b2To:`1F 카페`, b2Strong:`음료 쿠폰 제공`,
+  pageEyebrow:`Membership`, pageTitle:`BizHub가 주는 통합 멤버십 혜택`, pageDesc:`BizHub 회원님께만 1F Cafe, 2F Office, 3F Golf Fitting을 함께 즐길 수 있는 혜택을 드립니다.`,
+  crossEyebrow:`Cross Benefits`, crossTitle:`BizHub 멤버십 혜택`,
+  b1From:`1F 카페 고객`, b1Benefit:`10회 음료 이용시 1회 무료 혜택`,
+  b2From:`2F 오피스 입주사`, b2Benefit:`1F 카페 음료·베이커리 10% 할인, 3F 골프피팅 무료 이용권 제공`,
+  b3From:`3F 골프피팅 회원`, b3Benefit:`1F 카페 음료 쿠폰 제공, 3F 스크린 골프 이용권 제공`,
   cafeT:`1F 카페`, cafeD:`메뉴와 프로모션을 확인하세요.`,
   officeT:`2F 오피스`, officeD:`입주 패키지를 확인하세요.`,
   golfT:`3F 골프피팅`, golfD:`피팅 서비스를 확인하세요.`,
 };
 T.en.membership = {
-  pageEyebrow:`Membership`, pageTitle:`Benefits that cross every floor`, pageDesc:`The more floors you use together, the more you benefit.`,
-  crossEyebrow:`Cross Benefits`, crossTitle:`Cross-Floor Benefits`,
-  b1From:`2F Office Tenants`, b1To:`1F Café drinks & bakery`, b1Strong:`10% off`,
-  b2From:`3F Fitting Members`, b2To:`1F Café`, b2Strong:`free drink coupon`,
+  pageEyebrow:`Membership`, pageTitle:`BizHub's Integrated Membership Benefits`, pageDesc:`Only BizHub members get to enjoy 1F Café, 2F Office, and 3F Golf Fitting benefits all together.`,
+  crossEyebrow:`Cross Benefits`, crossTitle:`BizHub Membership Benefits`,
+  b1From:`1F Café Customers`, b1Benefit:`Buy 10 drinks, get 1 free`,
+  b2From:`2F Office Tenants`, b2Benefit:`10% off 1F Café drinks & bakery, free 3F Golf Fitting session`,
+  b3From:`3F Golf Fitting Members`, b3Benefit:`1F Café drink coupon, free 3F screen golf session`,
   cafeT:`1F Café`, cafeD:`Check out the menu and promotions.`,
   officeT:`2F Office`, officeD:`Check out the office packages.`,
   golfT:`3F Golf Fitting`, golfD:`Check out the fitting service.`,
@@ -44,14 +46,19 @@ ${pageHero('membership','gold', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
     <h2 class="sec-h2">${t.crossTitle}</h2>
     <div class="bench-diag" style="margin-top:22px;">
       <div class="bench-row">
-        <div class="bench-from office">${t.b1From}</div>
+        <div class="bench-from coffee">${t.b1From}</div>
         <div class="bench-arrow">${icon('arrowRight',18)}</div>
-        <div class="bench-to">${t.b1To} <strong style="margin-left:6px;">${t.b1Strong}</strong></div>
+        <div class="bench-to"><strong>${t.b1Benefit}</strong></div>
       </div>
       <div class="bench-row">
-        <div class="bench-from golf">${t.b2From}</div>
+        <div class="bench-from office">${t.b2From}</div>
         <div class="bench-arrow">${icon('arrowRight',18)}</div>
-        <div class="bench-to">${t.b2To} <strong style="margin-left:6px;">${t.b2Strong}</strong></div>
+        <div class="bench-to"><strong>${t.b2Benefit}</strong></div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-from golf">${t.b3From}</div>
+        <div class="bench-arrow">${icon('arrowRight',18)}</div>
+        <div class="bench-to"><strong>${t.b3Benefit}</strong></div>
       </div>
     </div>
   </div>

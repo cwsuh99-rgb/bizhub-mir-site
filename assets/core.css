@@ -224,7 +224,7 @@ tbody td{padding:10px 14px; border-bottom:1px solid var(--line-soft);}
 .bench-row{display:flex; align-items:stretch; border-bottom:1px solid var(--line-soft);}
 .bench-row:last-child{border-bottom:none;}
 .bench-from{width:220px; flex-shrink:0; padding:18px 20px; font-size:12.8px; font-weight:700; color:#fff; display:flex; align-items:center;}
-.bench-from.office{background:var(--navy);} .bench-from.golf{background:var(--green);}
+.bench-from.coffee{background:var(--coffee);} .bench-from.office{background:var(--navy);} .bench-from.golf{background:var(--green);}
 .bench-arrow{width:48px; flex-shrink:0; display:flex; align-items:center; justify-content:center; color:var(--gold); background:var(--bg-soft);}
 .bench-to{flex:1; padding:18px 20px; font-size:12.8px; color:var(--ink); display:flex; align-items:center; background:#fff;}
 
