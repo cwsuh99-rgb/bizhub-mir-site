@@ -48,7 +48,7 @@ function eyebrow(text, extraClass=''){
 const NAV = [
   {key:'bizhub', children:[{key:'about'},{key:'location'},{key:'news'}]},
   {key:'cafe', children:[{key:'cafe-menu'},{key:'cafe-space'}]},
-  {key:'office', children:[{key:'office-guide'},{key:'office-consulting'}]},
+  {key:'office', children:[{key:'office-guide'},{key:'consulting-pt'},{key:'consulting-report'}]},
   {key:'golf', children:[{key:'golf-fitting'},{key:'golf-business'}]},
   {key:'membership'},
 ];
@@ -60,7 +60,7 @@ const CRUMB = {
   membership:null, contact:null
 };
 /* ---------- sub-pages one level below a NAV child (not shown in the menu, but should still highlight their parent group) ---------- */
-const SUBPAGE_TOP = { 'golf-fitting-body':'golf', 'consulting-pt':'office', 'consulting-report':'office', 'golf-fitting-club':'golf', 'golf-fitting-swing':'golf' };
+const SUBPAGE_TOP = { 'golf-fitting-body':'golf', 'office-consulting':'office', 'golf-fitting-club':'golf', 'golf-fitting-swing':'golf' };
 
 /* ---------- logical page key -> static file ---------- */
 const PAGE_URL = {
@@ -76,12 +76,12 @@ function navigate(key){ window.location.href = PAGE_URL[key] || 'index.html'; }
 const T = { ko:{}, en:{} };
 T.ko.nav = { home:`Home`, bizhub:`BizHub`, about:`BizHub 소개`, location:`오시는 길`, news:`소식`,
   cafe:`1F 카페`, 'cafe-menu':`메뉴판`, 'cafe-space':`공간 & 인테리어`,
-  office:`2F 오피스`, 'office-guide':`오피스 안내`, 'office-consulting':`창업 컨설팅`, 'consulting-pt':`법인설립 서비스`, 'consulting-report':`OSS · Coretax 신고 서비스`,
+  office:`2F 오피스`, 'office-guide':`오피스 안내`, 'office-consulting':`창업 컨설팅`, 'consulting-pt':`창업 컨설팅`, 'consulting-report':`법인관리`,
   golf:`3F 골프피팅`, 'golf-fitting':`피팅 서비스`, 'golf-business':`비즈니스 골프`, 'golf-fitting-body':`Body Fitting`, 'golf-fitting-club':`Club Fitting`, 'golf-fitting-swing':`Swing Fitting`,
   membership:`멤버십`, contact:`문의하기` };
 T.en.nav = { home:`Home`, bizhub:`BizHub`, about:`About BizHub`, location:`Location`, news:`News`,
   cafe:`1F Café`, 'cafe-menu':`Menu`, 'cafe-space':`Space & Interior`,
-  office:`2F Office`, 'office-guide':`Office Guide`, 'office-consulting':`Startup Consulting`, 'consulting-pt':`Incorporation Service`, 'consulting-report':`OSS · Coretax Filing Service`,
+  office:`2F Office`, 'office-guide':`Office Guide`, 'office-consulting':`Startup Consulting`, 'consulting-pt':`Startup Consulting`, 'consulting-report':`Company Management`,
   golf:`3F Golf Fitting`, 'golf-fitting':`Fitting Service`, 'golf-business':`Business Golf`, 'golf-fitting-body':`Body Fitting`, 'golf-fitting-club':`Club Fitting`, 'golf-fitting-swing':`Swing Fitting`,
   membership:`Membership`, contact:`Contact` };
 
