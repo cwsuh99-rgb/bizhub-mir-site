@@ -24,7 +24,8 @@ T.ko.golfBusiness = {
   intro1t:`투어급 피팅 인프라`, intro1d:`정밀 분석 장비와 공인 피팅사를 갖춰 접대 라운드 전 클럽 컨디션까지 점검합니다.`,
   intro2t:`주재원·비즈니스 전문가 타겟`, intro2d:`자카르타 인근 한국 기업 주재원과 사업가의 접대·네트워킹 수요에 맞춰 설계했습니다.`,
 
-  facilityEyebrow:`Facility`, facilityTitle:`연습 + 가상 라운딩`, facilityDesc:`피팅으로 맞춘 클럽을 바로 스크린골프에서 테스트하고, 접대·네트워킹 라운드로 이어갈 수 있습니다.`,
+  facilityEyebrow:`Facility`, facilityTitle:`연습 + 가상 라운딩`, facilityDesc:`피팅으로 맞춘 클럽을 바로 스크린골프에서 테스트하고 네트워킹 라운드로 이어갈 수 있습니다. BizHub는 43,000개 이상의 골프 코스를 제공하고 있어, 인도네시아의 대부분의 골프 코스를 미리 경험해볼 수 있습니다.`,
+  facilityPh1:`스크린골프 룸 전경`, facilityPh2:`시타 & 피팅 존`, facilityPh3:`네트워킹 라운드 모습`,
   availEyebrow:`Availability`, availTitle:`이번 주 예약 가능 시간대 (예시)`,
   th1:`요일`, th2:`오전`, th3:`오후`, th4:`저녁`,
   r1a:`월–금`, r1b:`여유 있음`, r1c:`일부 마감`, r1d:`예약 문의`,
@@ -40,7 +41,8 @@ T.en.golfBusiness = {
   intro1t:`Tour-Grade Fitting Infrastructure`, intro1d:`Precision analysis equipment and certified fitters let you check your clubs' condition before a hosting round.`,
   intro2t:`Built for Expats & Business Professionals`, intro2d:`Designed around the hosting and networking needs of Korean corporate staff and business owners near Jakarta.`,
 
-  facilityEyebrow:`Facility`, facilityTitle:`Practice + Virtual Rounds`, facilityDesc:`Test your freshly fitted clubs on the screen golf simulator right away, then carry the round into a hosting or networking session.`,
+  facilityEyebrow:`Facility`, facilityTitle:`Practice + Virtual Rounds`, facilityDesc:`Test your freshly fitted clubs on the screen golf simulator right away, then carry it straight into a networking round. BizHub offers 43,000+ golf courses, so you can preview most of the courses in Indonesia before you ever tee off.`,
+  facilityPh1:`Screen Golf Room`, facilityPh2:`Test-Swing & Fitting Zone`, facilityPh3:`Networking Round`,
   availEyebrow:`Availability`, availTitle:`This Week's Availability (sample)`,
   th1:`Day`, th2:`Morning`, th3:`Afternoon`, th4:`Evening`,
   r1a:`Mon–Fri`, r1b:`Open`, r1c:`Partially booked`, r1d:`Ask us`,
@@ -68,6 +70,11 @@ ${pageHero('golf-business','green', lang, t.pageEyebrow, t.pageTitle, t.pageDesc
     ${eyebrow(t.facilityEyebrow)}
     <h2 class="sec-h2">${t.facilityTitle}</h2>
     <p class="sec-desc">${t.facilityDesc}</p>
+    <div class="grid-3">
+      ${ph(t.facilityPh1,'green')}
+      ${ph(t.facilityPh2,'green')}
+      ${ph(t.facilityPh3,'green')}
+    </div>
   </div>
 </section>
 <section class="section">
