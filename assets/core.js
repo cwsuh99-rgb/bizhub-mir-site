@@ -33,6 +33,7 @@ const ICONS = {
   chevDown:'<polyline points="6 9 12 15 18 9"/>',
   cluster:'<circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><line x1="8.5" y1="7.5" x2="15.5" y2="16.5"/><line x1="15.5" y1="7.5" x2="8.5" y2="16.5"/>',
   x:'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
+  more:'<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>',
 };
 function icon(name, size=20){
   return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]||''}</svg>`;
@@ -105,8 +106,7 @@ function siteHeader(current, lang){
   const items = NAV.map(n=>{
     const isActive = activeTop===n.key;
     if(n.children){
-      const open = isActive ? 'open':'';
-      return `<div class="gnb-item ${open}">
+      return `<div class="gnb-item">
         <button class="gnb-btn ${isActive?'on':''}" onclick="toggleDrop(this)">${t.nav[n.key]}${icon('chevDown',12)}</button>
         <div class="gnb-drop">
           ${n.children.map(c=>`<button class="${current===c.key?'on':''}" onclick="event.stopPropagation();navigate('${c.key}')">${t.nav[c.key]}</button>`).join('')}
@@ -243,13 +243,6 @@ function toggleMobileMenu(){
   const isOpen = el.classList.toggle('open');
   btn.innerHTML = isOpen ? icon('x',20) : icon('menu',20);
   document.body.style.overflow = isOpen ? 'hidden' : '';
-}
-function closeMobileMenu(){
-  const el = document.getElementById('mobileMenu');
-  const btn = document.getElementById('hambBtn');
-  if(el) el.classList.remove('open');
-  if(btn) btn.innerHTML = icon('menu',20);
-  document.body.style.overflow = '';
 }
 function toggleMobileGroup(btn){
   const group = btn.closest('.mnav-group');

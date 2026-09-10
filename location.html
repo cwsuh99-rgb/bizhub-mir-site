@@ -24,10 +24,9 @@ T.ko.location = {
   pageEyebrow:`BizHub · 오시는 길`, pageTitle:`자바베카 중심, 찾아오기 쉬운 위치`, pageDesc:`산업단지·대학·골프장이 모두 가까운 Ruko Hollywood Boulevard에 위치합니다.`,
   mapPh:`BizHub Mir 위치 지도`, mapOpenLink:`Google Maps에서 크게 보기`,
   addrLabel:`주소`, phoneLabel:`전화 / WhatsApp`, emailLabel:`이메일`, igLabel:`Instagram`,
-  directionsBtn:`길찾기 문의하기`,
   hoursEyebrow:`Hours`, hoursTitle:`층별 영업시간`,
-  th1:`층`, th2:`운영 방식`, th3:`비고`,
-  r1a:`1F 카페`, r1b:`매일 08:00–21:00`, r1c:`워크인 상시 환영`,
+  th1:`사업장`, th2:`운영 시간`, th3:`비고`,
+  r1a:`1F 카페`, r1b:`09:00-21:00`, r1c:`워크인 상시 환영`,
   r2a:`2F 오피스`, r2b:`평일 09:00–18:00`, r2c:`입주사는 24시간 출입 가능(스마트도어록)`,
   r3a:`3F 골프피팅`, r3b:`100% 예약제`, r3c:`사전 예약 후 방문`,
 };
@@ -35,10 +34,9 @@ T.en.location = {
   pageEyebrow:`BizHub · Location`, pageTitle:`In the heart of Jababeka, easy to find`, pageDesc:`Located on Ruko Hollywood Boulevard, close to the industrial estate, the university, and the golf course.`,
   mapPh:`BizHub Mir location map`, mapOpenLink:`Open in Google Maps`,
   addrLabel:`Address`, phoneLabel:`Phone / WhatsApp`, emailLabel:`Email`, igLabel:`Instagram`,
-  directionsBtn:`Get Directions / Contact Us`,
   hoursEyebrow:`Hours`, hoursTitle:`Hours by Floor`,
-  th1:`Floor`, th2:`Hours`, th3:`Notes`,
-  r1a:`1F Café`, r1b:`Daily 08:00–21:00`, r1c:`Walk-ins always welcome`,
+  th1:`Business`, th2:`Hours`, th3:`Notes`,
+  r1a:`1F Café`, r1b:`Daily 09:00–21:00`, r1c:`Walk-ins always welcome`,
   r2a:`2F Office`, r2b:`Weekdays 09:00–18:00`, r2c:`Tenants have 24-hr access (smart door lock)`,
   r3a:`3F Golf Fitting`, r3b:`100% by reservation`, r3c:`Visit by appointment only`,
 };
@@ -60,7 +58,6 @@ ${pageHero('location','', lang, t.pageEyebrow, t.pageTitle, t.pageDesc)}
         <div class="contact-row"><div class="ic">${icon('phone',16)}</div><div><b>${t.phoneLabel}</b><span>+62 8XX-XXXX-XXXX</span></div></div>
         <div class="contact-row"><div class="ic">${icon('chat',16)}</div><div><b>${t.emailLabel}</b><span>hello@bizcafe.id</span></div></div>
         <div class="contact-row"><div class="ic">${icon('camera',16)}</div><div><b>${t.igLabel}</b><span>@bizcafe.id</span></div></div>
-        <a class="btn btn-navy" style="margin-top:18px;" onclick="navigate('contact')">${t.directionsBtn} ${icon('arrowRight',14)}</a>
       </div>
     </div>
   </div>
